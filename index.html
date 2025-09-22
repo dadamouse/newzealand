@@ -1,199 +1,347 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <title>北島行程（Taupō 2 晚｜Rotorua 1 晚）＋ Skyline Luge</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    :root{
-      --bg:#0b1220;--card:#111827;--ink:#e5e7eb;--ink-dim:#a3a3a3;--brand:#22d3ee;--chip:#1f2937;--ok:#34d399;--warn:#fbbf24;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0a0f1a,#0d1324);color:var(--ink);font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;}
-    header{padding:28px 20px 10px; text-align:center;}
-    h1{margin:0;font-size:28px;letter-spacing:.3px}
-    .meta{opacity:.8;margin-top:6px}
-    main{max-width:1100px;margin:0 auto;padding:18px}
-    .grid{display:grid;gap:14px}
-    @media (min-width:900px){ .grid{ grid-template-columns: 2.1fr 1fr; } }
+<!DOCTYPE html>
 
-    .card{background:var(--card);border:1px solid #1f2937;border-radius:18px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
-    .day{display:grid; gap:10px}
-    .day h2{margin:0;font-size:20px}
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;background:var(--chip);border-radius:999px;font-size:13px;color:var(--ink-dim);margin-right:6px}
-    .pill b{color:var(--ink)}
-    .chips{margin:6px 0 0}
-    .sec h3{font-size:15px;margin:10px 0 6px;color:#cbd5e1;letter-spacing:.2px}
-    ul{margin:8px 0 0 18px}
-    li{margin:2px 0 8px}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    details{border:1px dashed #374151;border-radius:12px;padding:8px 10px;margin-top:8px}
-    details summary{cursor:pointer;color:#cbd5e1}
-    .choose-list li{list-style:none;margin:8px 0;padding:10px;border:1px solid #243042;border-radius:12px}
-    .choose-list label{display:flex;gap:10px;align-items:flex-start}
-    .choose-list input{margin-top:3px}
-    .rating{color:var(--ok);font-weight:600}
-    .warn{color:var(--warn);font-weight:600}
-    .accom h3{margin-top:0}
-    .tag{display:inline-block;padding:2px 8px;border-radius:999px;background:#172554;color:#93c5fd;font-size:12px;margin-left:8px}
-    footer{opacity:.7;text-align:center;padding:24px}
-  </style>
-</head>
-<body>
-<header>
-  <h1>北島加強版行程（Taupō 2 晚｜Rotorua 1 晚）</h1>
-  <div class="meta">加入 Skyline Gondola + Luge／每日列出多選活動供挑選</div>
-</header>
-<main class="grid">
-  <section class="card">
-    <div class="day">
-      <h2>Day 1｜Auckland ➜ Waitomo ➜ Taupō（宿：Taupō）</h2>
-      <div class="chips">
-        <span class="pill">車程參考 <b>2.5–3h</b>（含停留）</span>
-        <span class="pill">主題 <b>鐘乳石洞 / 夜宿湖畔</b></span>
-      </div>
-      <div class="sec">
-        <h3>必玩</h3>
-        <ul class="choose-list">
-          <li>
-            <label>
-              <input type="checkbox">
-              <span>Waitomo Glowworm Caves 螢火蟲鐘乳石洞（官網<a href="https://www.waitomo.com/glowworms-and-caves/waitomo-glowworm-caves" target="_blank" rel="noopener">資訊</a>，成人 NZD 79；可加購 <a href="https://www.waitomo.com/glowworms-and-caves/ruakuri-cave" target="_blank" rel="noopener">Ruakuri Cave</a> 成人 NZD 113）</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox">
-              <span>抵達 Taupō 湖畔散步：Spa Thermal Park／Otumuheke 溫泉溪（<a href="https://www.lovetaupo.com/en/scenic-attractions/spa-thermal-park/" target="_blank" rel="noopener">介紹</a>）</span>
-            </label>
-          </li>
-        </ul>
-        <details>
-          <summary>加碼（時間夠再排）</summary>
-          <ul>
-            <li>Lake Taupō 2 小時遊湖看毛利岩雕（10:30 / 14:00 班次，<a href="https://laketaupocruises.co.nz/" target="_blank" rel="noopener">營運資訊</a>）</li>
-          </ul>
-        </details>
-        <h3>用餐建議（Taupō）</h3>
-        <ul>
-          <li><a href="https://dixiebrowns.co.nz/" target="_blank" rel="noopener">Dixie Browns</a>｜湖景早午餐/晚餐</li>
-          <li><a href="https://thebistro.nz/" target="_blank" rel="noopener">The Bistro</a>｜在地口碑餐館</li>
-        </ul>
-      </div>
-    </div>
+<html lang="zh-Hant"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>NZ Itinerary v23（Dark）— Tongariro Alpine Crossing + Christchurch Day</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC',Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0b0f14;color:#e5e7eb;margin:0;padding:24px}
+h1{margin:0 0 16px 0;color:#f3f4f6}
+.day{background:#0f172a;border:1px solid #1f2937;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.35);margin:16px 0;overflow:hidden}
+.head{padding:14px 18px;background:#111827;color:#e5e7eb;font-weight:700;border-bottom:1px solid #1f2937}
+.sec{padding:12px 18px;border-top:1px dashed #1f2937}
+.sec h3{margin:0 0 8px 0;font-size:16px;color:#cbd5e1}
+ul{margin:6px 0 0 1rem}
+li{margin:4px 0}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#0ea5e922;color:#67e8f9;font-size:12px;margin-left:8px;border:1px solid #0ea5e9}
+.route{padding:12px 18px;border-top:1px solid #1f2937;background:#0b1220}
+a{color:#22d3ee;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:12px;color:#9ca3af}
 
-    <hr style="border-color:#1f2937">
-
-    <div class="day">
-      <h2>Day 2｜Taupō 滿日（宿：Taupō）</h2>
-      <div class="chips">
-        <span class="pill">主題 <b>瀑布 / 地熱 / 船遊 / 刺激體驗</b></span>
-      </div>
-      <div class="sec">
-        <h3>白天多選</h3>
-        <ul class="choose-list">
-          <li><label><input type="checkbox"><span>Huka Falls 瀑布觀景（<a href="https://www.lovetaupo.com/en/discover/highlights/huka-falls/" target="_blank" rel="noopener">官方介紹</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Aratiatia Rapids 水壩洩洪（夏季 <b>10:00 / 12:00 / 14:00 / 16:00</b>，<a href="https://aratiatiarapids.co.nz/" target="_blank" rel="noopener">時間表</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Craters of the Moon 地熱步道（成人 NZD 10，<a href="https://www.cratersofthemoon.co.nz/" target="_blank" rel="noopener">官網</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Otumuheke Stream 免費野溪溫泉（<a href="https://www.lovetaupo.com/en/scenic-attractions/otumuheke-stream/" target="_blank" rel="noopener">介紹</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Lake Cruise 近距離看毛利岩雕（<a href="https://laketaupocruises.co.nz/" target="_blank" rel="noopener">時刻</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>（進階）Orakei Korako 地熱秘境＋接駁船（<a href="https://www.orakeikorako.co.nz/visit" target="_blank" rel="noopener">營運/票務</a>）</span></label></li>
-        </ul>
-        <details>
-          <summary>刺激選項</summary>
-          <ul>
-            <li>Hukafalls Jet 噴射快艇（30 分鐘直達瀑布底，<a href="https://www.hukafallsjet.com/home/" target="_blank" rel="noopener">官網</a>）</li>
-            <li>Taupō Bungy 懸崖彈跳／Swing（<a href="https://www.bungy.co.nz/taupo/taupo-bungy-centre/taupo-bungy/" target="_blank" rel="noopener">官網</a>）</li>
-          </ul>
-        </details>
-      </div>
-    </div>
-
-    <hr style="border-color:#1f2937">
-
-    <div class="day">
-      <h2>Day 3｜Taupō ➜ Rotorua（宿：Rotorua）</h2>
-      <div class="chips">
-        <span class="pill">車程參考 <b>約 1h</b></span>
-        <span class="pill">主題 <b>地熱奇景 / 纜車＋Luge / 夜間步道或溫泉</b></span>
-      </div>
-      <div class="sec">
-        <h3>早上</h3>
-        <ul class="choose-list">
-          <li><label><input type="checkbox"><span>Wai-O-Tapu 地熱公園（8:30–16:30，最後入園 15:00；Lady Knox 間歇泉 <b>10:15</b>，<a href="https://www.waiotapu.co.nz/plan-your-visit/" target="_blank" rel="noopener">官網</a>）</span></label></li>
-        </ul>
-        <h3>中午／午後</h3>
-        <ul class="choose-list">
-          <li><label><input type="checkbox"><span>Skyline Gondola + Luge（建議 3–5 趟，<a href="https://rotorua.skyline.co.nz/things-to-do/luge-rotorua/pricing/" target="_blank" rel="noopener">票價套票</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Stratosfare 自助餐（可加購纜車＋午／晚餐，<a href="https://rotorua.skyline.co.nz/pricing-and-packages/stratosfare-restaurant/" target="_blank" rel="noopener">價格</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>ZORB 滾球體驗（四條賽道，<a href="https://zorb.com/" target="_blank" rel="noopener">官網</a>）</span></label></li>
-        </ul>
-        <h3>晚上</h3>
-        <ul class="choose-list">
-          <li><label><input type="checkbox"><span>Redwoods Treewalk 夜間燈光步道（一般票 / Fast Pass，<a href="https://www.treewalk.co.nz/the-walk/redwoods-nightlights/" target="_blank" rel="noopener">票價</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Polynesian Spa 湖畔溫泉（<a href="https://www.polynesianspa.co.nz/bathing" target="_blank" rel="noopener">池別與價目</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>Kuirau Park 免費泡腳池（<a href="https://www.rotoruanz.com/visit/listing/things-to-do/kuirau-park" target="_blank" rel="noopener">介紹</a>）</span></label></li>
-        </ul>
-        <details>
-          <summary>市區散步 &amp; 餐廳</summary>
-          <ul>
-            <li>Government Gardens（<a href="https://www.rotoruanz.com/visit/listing/things-to-do/government-gardens" target="_blank" rel="noopener">介紹</a>）</li>
-            <li>Eat Streat 餐飲街（<a href="https://www.rotoruanz.com/eat-drink/eat-streat" target="_blank" rel="noopener">官方頁</a>）｜推薦：<a href="https://atticusfinch.co.nz/" target="_blank" rel="noopener">Atticus Finch</a>、<a href="https://www.capers.co.nz/" target="_blank" rel="noopener">Capers</a></li>
-          </ul>
-        </details>
-      </div>
-    </div>
-
-    <hr style="border-color:#1f2937">
-
-    <div class="day">
-      <h2>（備用）Day 4｜Rotorua（上午活動） ➜ 返程</h2>
-      <div class="chips">
-        <span class="pill">主題 <b>文化 / 地熱 / 輕鬆走</b></span>
-      </div>
-      <div class="sec">
-        <ul class="choose-list">
-          <li><label><input type="checkbox"><span>Te Puia（間歇泉、泥漿池、毛利文化與 Kiwi 保育中心，<a href="https://www.tepuia.com/" target="_blank" rel="noopener">官網</a>）</span></label></li>
-          <li><label><input type="checkbox"><span>或再訪喜歡的景點（Redwoods / Polynesian Spa / Skyline 等）</span></label></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <aside class="card accom">
-    <h3>推薦住宿（評分 ≧ 8，連結可用）<span class="tag">Booking</span></h3>
-    <p><b>Taupō（住 2 晚）</b></p>
-    <ul>
-      <li><a href="https://www.booking.com/hotel/nz/quality-inn-sails-taupo.html" target="_blank" rel="noopener">Sails on the Lake</a></li>
-      <li><a href="https://www.booking.com/hotel/nz/ashbrook-motel.html" target="_blank" rel="noopener">Ashbrook Motel</a></li>
-      <li><a href="https://www.booking.com/hotel/nz/acapulco-motor-inn.html" target="_blank" rel="noopener">Acapulco Motor Inn</a></li>
-    </ul>
-
-    <p><b>Rotorua（住 1 晚）</b></p>
-    <ul>
-      <li><a href="https://www.booking.com/hotel/nz/havana-motor-lodge.html" target="_blank" rel="noopener">Aura Accommodation（原 Havana Motor Lodge）</a></li>
-      <li><a href="https://www.booking.com/hotel/nz/bk-s-rotorua-motor-lodge.html" target="_blank" rel="noopener">BK’s Rotorua Motor Lodge</a></li>
-      <li><a href="https://www.booking.com/hotel/nz/rotorua-international-motor-inn.html" target="_blank" rel="noopener">Rotorua International Motor Inn</a></li>
-    </ul>
-
-    <h3>沿途／當地美食（可點看介紹）</h3>
-    <ul>
-      <li>Taupō：<a href="https://dixiebrowns.co.nz/" target="_blank" rel="noopener">Dixie Browns</a>、<a href="https://thebistro.nz/" target="_blank" rel="noopener">The Bistro</a></li>
-      <li>Rotorua（Eat Streat）：<a href="https://atticusfinch.co.nz/" target="_blank" rel="noopener">Atticus Finch</a>、<a href="https://www.capers.co.nz/" target="_blank" rel="noopener">Capers Café + Store</a></li>
-      <li>山頂景觀餐廳：<a href="https://rotorua.skyline.co.nz/pricing-and-packages/stratosfare-restaurant/" target="_blank" rel="noopener">Stratosfare</a></li>
-    </ul>
-
-    <h3>小提醒</h3>
-    <ul>
-      <li>Wai‑O‑Tapu：Lady Knox 間歇泉 <b>10:15</b>，請 9:45 抵達。</li>
-      <li>Aratiatia Rapids：夏季洩洪 <b>10:00 / 12:00 / 14:00 / 16:00</b>；冬季僅前三班。</li>
-      <li>Rotorua Skyline Luge：平均單趟約 15 分鐘，建議至少 3 趟。</li>
-      <li>Rainbow Springs 已永久停業；若看到舊文章提到可忽略。</li>
-    </ul>
-  </aside>
-</main>
-
-<footer>© Your NZ Planner — 本檔僅提供一般旅遊規劃參考，營運時間與票價以官網為準。</footer>
-</body>
-</html>
+.lodging{background:#0b1220;border:1px dashed #1f2937;padding:12px;border-radius:12px;margin:10px 18px} .lodging h3{margin:0 0 6px;font-size:15px;color:#cbd5e1} .lodging ul{margin:0;padding-left:18px} .lodging li{margin:6px 0} .lodging a{color:#22d3ee;text-decoration:none} .lodging a:hover{text-decoration:underline}</style></head><body>
+<h1>紐西蘭 北+南島行程（v23｜黑色主題）</h1>
+<div class="small">本版更新：Day 2 改為 Tongariro Alpine Crossing（依你提供的 TimTing 文章）；Day 5 在 Christchurch 市區，Tekapo 等順延一天；每日卡片底部皆附 Google 路線；餐廳均為 Google 上通常 4★+ 的熱門選擇。</div>
+<div class="day">
+<div class="head">Day 1 — 1/26 (Sat)　AKL → Waitomo → Taupō（住：Taupō，第1晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>抵達奧克蘭</strong> — NZ078 抵達 AKL 10:10（I 航站）</li>
+<li><strong>取車／出發</strong> — 取車後走 SH1→SH39 前往 Waitomo（約 2.5 小時） ｜ <a href="https://www.google.com/maps/dir/Auckland+Airport/Legendary+Black+Water+Rafting+Co+Waitomo" target="_blank">路線</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Waitomo 黑水漂（Black Labyrinth）</strong> — 橡皮圈漂流＋螢火蟲，約 3 小時；需自備泳衣與毛巾。 ｜ <a href="https://www.waitomo.com/black-water-rafting/legendary-black-water-rafting-co-black-labyrinth" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Taupō 晚餐＋Lakefront stroll（湖畔散步）</strong> — 入住 Taupō（第 1 晚）。</li>
+</ul></div>
+<div class="sec"><h3>備選</h3><ul>
+<li><strong>備選（Waitomo）</strong><ul>
+<li><a href="https://www.waitomo.com/caves-and-tours/waitomo-glowworm-caves/" target="_blank">Waitomo Glowworm Caves</a></li>
+<li><a href="https://www.waitomo.com/caves-and-tours/ruakuri-cave/" target="_blank">Ruakuri Cave</a></li>
+</ul></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Dixie Browns（Taupō 湖畔）</strong> — 38 Roberts St, Taupō ｜ <a href="https://dixiebrowns.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Dixie+Browns+Taup%C5%8D" target="_blank">地圖</a></li>
+<li><strong>The Bistro（精緻當代紐餐）</strong> — 17 Tamamutu St, Taupō ｜ <a href="https://thebistro.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Bistro+Taup%C5%8D" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul>
+<li><a href="https://www.waitomo.com/black-water-rafting/legendary-black-water-rafting-co-black-labyrinth" target="_blank">Black Labyrinth 官方</a></li>
+</ul></div>
+<div class="lodging"><h3>住宿推薦（Taupō）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/sails-on-the-lake-h78665992/hotel/taupo-nz.html" rel="noopener" target="_blank">Sails on the Lake</a></li><li><a href="https://www.agoda.com/le-chalet-suisse-motel/hotel/taupo-nz.html" rel="noopener" target="_blank">Le Chalet Suisse Motel</a></li><li><a href="https://www.agoda.com/cascades-lakefront-motel/hotel/taupo-nz.html" rel="noopener" target="_blank">Cascades Lakefront Motel</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：AKL→Waitomo 約 2 小時 30 分；Waitomo→Taupō 約 2 小時　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Auckland+Airport/Legendary+Black+Water+Rafting+Co+Waitomo/Taup%C5%8D" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 2 — 1/27 (Sun)　Taupō ↔ Tongariro Alpine Crossing（住：Taupō，第2晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>出發至接駁點（建議搭 Shuttle）</strong> — Taupō → Mangatepopo 起點接駁，跨點到 Ketetahi 終點（需預約 Shuttle；停車限制）。 ｜ <a href="https://www.tongarirocrossing.org.nz/plan-your-trip" target="_blank">官網/資訊</a> ｜ <a href="https://www.google.com/maps/dir/Taup%C5%8D/Mangatepopo+Carpark" target="_blank">路線</a></li>
+<li><strong>健行開始：Mangatepopo Carpark → Soda Springs</strong> — 緩上升，熱身段。 ｜ <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Soda Springs → Red Crater → Emerald Lakes</strong> — 陡上 Devil’s Staircase、稜線風強；俯瞰藍/翡翠湖。 ｜ <a href="https://www.doc.govt.nz/Documents/parks-and-recreation/tracks-and-walks/tongariro-taupo/tongariro-alpine-crossing-day-hikes-factsheet.pdf" target="_blank">官網/資訊</a></li>
+<li><strong>Blue Lake → 北側下切至 Ketetahi</strong> — 長下坡，注意膝蓋負擔；全程約 19.4 km、6–8 小時。 ｜ <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>返回 Taupō</strong> — 熱水池放鬆可選 Wairakei Terraces／AC Baths（自選）。</li>
+</ul></div>
+<div class="sec"><h3>備選</h3><ul>
+<li><strong>天候不佳備案（同園區）</strong><ul>
+<li><a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/taranaki-falls-walking-track/" target="_blank">Taranaki Falls 6 km 環狀步道</a></li>
+<li><a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tama-lakes-track/" target="_blank">Tama Lakes（下湖觀景點）</a></li>
+</ul></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Schnapps Bar（National Park Village）</strong> — 2 Findlay St, National Park ｜ <a href="https://www.schnappsbarruapehu.com/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Schnapps+Bar+National+Park+Village" target="_blank">地圖</a></li>
+<li><strong>The Station Cafe（National Park Village）</strong> — Station Rd, National Park ｜ <a href="https://www.nationalpark.co.nz/business-listing/station-cafe" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Station+Cafe+National+Park+Village" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul>
+<li><a href="https://timtingtravel.com/tongariro-national-park/" target="_blank">TimTing：Tongariro 攻略</a></li>
+<li><a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/" target="_blank">DOC：Alpine Crossing 官方頁</a></li>
+<li><a href="https://www.doc.govt.nz/Documents/parks-and-recreation/tracks-and-walks/tongariro-taupo/tongariro-alpine-crossing-day-hikes-factsheet.pdf" target="_blank">DOC：Alpine Crossing PDF</a></li>
+<li><a href="https://www.tongarirocrossing.org.nz/plan-your-trip" target="_blank">Shuttle/規劃：Tongariro Crossing</a></li>
+<li><a href="https://www.lonelyplanet.com/articles/hiking-tongariro-crossing-new-zealand" target="_blank">Lonely Planet：How to hike the Tongariro Alpine Crossing</a></li></ul></div>
+<div class="lodging"><h3>住宿推薦（Taupō）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/sails-on-the-lake-h78665992/hotel/taupo-nz.html" rel="noopener" target="_blank">Sails on the Lake</a></li><li><a href="https://www.agoda.com/le-chalet-suisse-motel/hotel/taupo-nz.html" rel="noopener" target="_blank">Le Chalet Suisse Motel</a></li><li><a href="https://www.agoda.com/cascades-lakefront-motel/hotel/taupo-nz.html" rel="noopener" target="_blank">Cascades Lakefront Motel</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Taupō→Mangatepopo（起點）約 1 小時 20 分；Ketetahi（終點）→Taupō 約 1 小時 15 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Taup%C5%8D/Mangatepopo+Carpark/Ketetahi+Car+Park/Taup%C5%8D" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 3 — 1/28 (Mon)　Taupō → Rotorua（住：Rotorua，第1晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>Wai‑O‑Tapu Thermal Wonderland（地熱公園）</strong> — 彩色地熱池，步道 1.5–3 小時；Lady Knox 間歇泉 10:15 ｜ <a href="https://www.waiotapu.co.nz/plan-your-visit/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Skyline Rotorua Gondola + Luge</strong> — 建議 3–5 趟；可加購高空活動。 ｜ <a href="https://rotorua.skyline.co.nz/things-to-do/luge-rotorua/pricing/" target="_blank">官網/資訊</a></li>
+<li><strong>參考：滑草／Luge 綜合攻略</strong> — 中文圖文參考 ｜ <a href="https://curly.com.tw/skyline-luge/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Redwoods Nightlights Treewalk 或 Polynesian Spa</strong> — 夜間燈光步道／湖景溫泉二選一。 ｜ <a href="https://www.treewalk.co.nz/the-walk/redwoods-nightlights/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Atticus Finch（Eat Streat）</strong> — 1106 Tutanekai St ｜ <a href="https://atticusfinch.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Atticus+Finch+Rotorua" target="_blank">地圖</a></li>
+<li><strong>Capers Cafe + Store</strong> — 1181 Eruera St ｜ <a href="https://www.capers.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Capers+Cafe+Rotorua" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="lodging"><h3>住宿推薦（Rotorua）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/bk-s-rotorua-motor-lodge/hotel/rotorua-nz.html" rel="noopener" target="_blank">BK's Rotorua Motor Lodge</a></li><li><a href="https://www.agoda.com/lake-rotorua-hotel/hotel/rotorua-nz.html" rel="noopener" target="_blank">Lake Rotorua Hotel</a></li><li><a href="https://www.agoda.com/jetpark-hotel-rotorua/hotel/rotorua-nz.html" rel="noopener" target="_blank">JetPark Hotel Rotorua</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Taupō→Wai‑O‑Tapu 約 45 分；Wai‑O‑Tapu→Skyline Rotorua 約 35 分；市區各點 10–15 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Taup%C5%8D/Wai-O-Tapu/Skyline+Rotorua/Redwoods+Treewalk/Rotorua" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 4 — 1/29 (Tue)　Rotorua 深度（住：Rotorua，第2晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>Te Puia（geothermal valley &amp; Māori arts）</strong> — Pōhutu 間歇泉、雕刻學院；可加購文化晚宴（Hāngi） ｜ <a href="https://www.tepuia.com/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Kuirau Park（free geothermal foot pools）</strong> — 市區輕鬆散步點。 ｜ <a href="https://www.rotoruanz.com/visit/listing/see-and-do/kuirau-park" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Polynesian Spa 礦物池</strong> — 湖景溫泉放鬆（可與晚餐互換）。 ｜ <a href="https://www.polynesianspa.co.nz/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Terrace Kitchen（時令餐酒）</strong> — 1029 Tutanekai St ｜ <a href="https://www.terrace.kitchen/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Terrace+Kitchen+Rotorua" target="_blank">地圖</a></li>
+<li><strong>Eat Streat 餐廳街（多選）</strong> — Tutanekai St ｜ <a href="https://www.rotoruanz.com/visit/eat-drink" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Eat+Streat+Rotorua" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="lodging"><h3>住宿推薦（Rotorua）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/bk-s-rotorua-motor-lodge/hotel/rotorua-nz.html" rel="noopener" target="_blank">BK's Rotorua Motor Lodge</a></li><li><a href="https://www.agoda.com/lake-rotorua-hotel/hotel/rotorua-nz.html" rel="noopener" target="_blank">Lake Rotorua Hotel</a></li><li><a href="https://www.agoda.com/jetpark-hotel-rotorua/hotel/rotorua-nz.html" rel="noopener" target="_blank">JetPark Hotel Rotorua</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Rotorua 市區各點 10–15 分/段　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Rotorua/Te+Puia/Kuirau+Park/Polynesian+Spa/Rotorua" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 5 — 1/30 (Wed)　Rotorua → Auckland（飛）→ Christchurch（住：Christchurch）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>飛抵 CHC，進市區</strong> — Christchurch Airport → CBD（約 20–25 分） ｜ <a href="https://www.google.com/maps/dir/Christchurch+Airport/Christchurch+CBD" target="_blank">路線</a></li>
+<li><strong>Christchurch Botanic Gardens 散步/電動導覽車</strong> — 花園/玻璃溫室；或搭園內電動導覽（50 分） ｜ <a href="https://www.christchurchattractions.nz/botanic-gardens-tour/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Riverside Market 午餐</strong> — 室內美食市集、咖啡甜點齊全 ｜ <a href="https://riverside.nz/" target="_blank">官網/資訊</a></li>
+<li><strong>Christchurch Tram or Punting on the Avon（自選）</strong> — 市區觀光電車或雅芳河撐篙 ｜ <a href="https://www.christchurchattractions.nz/christchurch-tram/" target="_blank">官網/資訊</a></li>
+<li><strong>Christchurch Gondola</strong> — 山頂 360° 景；可搭接駁或自駕 ｜ <a href="https://www.christchurchattractions.nz/christchurch-gondola/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>New Regent Street 晚餐＆街景</strong> — 彩色街屋打卡點</li>
+</ul></div>
+<div class="sec"><h3>備選</h3><ul>
+<li><strong>備選（視體力與天氣）</strong><ul>
+<li><a href="https://www.canterburymuseum.com/quakecity/" target="_blank">Quake City 地震博物館</a></li>
+<li><a href="https://www.canterburymuseum.com/" target="_blank">Canterbury Museum（整修/開放情況請查官方）</a></li>
+</ul></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Riverside Market（多攤位）</strong> — Lichfield St × Oxford Tce ｜ <a href="https://riverside.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Riverside+Market+Christchurch" target="_blank">地圖</a></li>
+<li><strong>Twenty Seven Steps（新攝政街）</strong> — 16 New Regent St ｜ <a href="https://twentysevensteps.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Twenty+Seven+Steps+Christchurch" target="_blank">地圖</a></li>
+<li><strong>Little High Eatery（美食廣場）</strong> — 255 St Asaph St ｜ <a href="https://littlehigh.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Little+High+Eatery" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul>
+<li><a href="https://www.christchurchattractions.nz/botanic-gardens-tour/" target="_blank">Botanic Gardens Tour</a></li>
+<li><a href="https://www.christchurchattractions.nz/christchurch-gondola/" target="_blank">Christchurch Gondola 官方</a></li>
+<li><a href="https://www.christchurchattractions.nz/christchurch-tram/" target="_blank">Christchurch Tram</a></li>
+<li><a href="https://riverside.nz/" target="_blank">Riverside Market 官方</a></li>
+</ul></div>
+<div class="lodging"><h3>住宿推薦（Christchurch）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/southwark-apartments/hotel/christchurch-nz.html" rel="noopener" target="_blank">Southwark Hotel &amp; Apartments</a></li><li><a href="https://www.agoda.com/ramada-suites-christchurch/hotel/christchurch-nz.html" rel="noopener" target="_blank">Ramada Suites Christchurch City</a></li><li><a href="https://www.agoda.com/hotel-ibis-christchurch/hotel/christchurch-nz.html" rel="noopener" target="_blank">ibis Christchurch</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：CHC 機場→CBD 約 20–25 分；CBD→Gondola 約 20 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Christchurch+Airport/Christchurch+Botanic+Gardens/Riverside+Market+Christchurch/Christchurch+Gondola/Christchurch+CBD" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 6 — 1/31 (Thu)　Christchurch → Tekapo（住：Tekapo）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>CHC → Tekapo 自駕</strong> — 約 3 小時；SH1/79/8 線 ｜ <a href="https://www.google.com/maps/dir/Christchurch+CBD/Lake+Tekapo" target="_blank">路線</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Church of the Good Shepherd（好牧羊人教堂）／Lakefront stroll（湖畔散步）</strong> — 經典拍照點 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Church+of+the+Good+Shepherd+Tekapo" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Tekapo 星空（晴天）</strong> — 可參加觀星導覽</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Kohan Restaurant（和食 / 湖景）</strong> — 6 Rapuwai Lane ｜ <a href="https://kohannz.com/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Kohan+Restaurant+Tekapo" target="_blank">地圖</a></li>
+<li><strong>Blue Lake Eatery &amp; Bar</strong> — SH8, Tekapo Village ｜ <a href="https://bluelake.kiwi/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Lake+Eatery+Tekapo" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul><li><a href="https://www.lonelyplanet.com/articles/new-zealand-road-trips" target="_blank">Lonely Planet：The 8 best road trips in New Zealand（Southern Alps loop）</a></li></ul></div><div class="lodging"><h3>住宿推薦（Lake Tekapo）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/lake-tekapo-village-motel/hotel/lake-tekapo-nz.html" rel="noopener" target="_blank">Lake Tekapo Village Motel</a></li><li><a href="https://www.agoda.com/lake-tekapo-motels-holiday-park/hotel/lake-tekapo-nz.html" rel="noopener" target="_blank">Lakes Edge Holiday Park (motels/cabins)</a></li><li><a href="https://www.agoda.com/peppers-bluewater-resort/hotel/lake-tekapo-nz.html" rel="noopener" target="_blank">Peppers Bluewater Resort（備選，旺季易超預算）</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Christchurch→Tekapo 約 3 小時　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Christchurch/Lake+Tekapo/Church+of+the+Good+Shepherd" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 7 — 2/1 (Fri)　Tekapo → Aoraki/Mt Cook（住：Mt Cook）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>進國家公園／Pukaki 觀景</strong> — Tekapo → Mt Cook 約 1.5 小時 ｜ <a href="https://www.google.com/maps/dir/Lake+Tekapo/Aoraki%2FMount+Cook+Village" target="_blank">路線</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Hooker Valley Track / Kea Point Track</strong> — 經典步道 1–3 小時（視天氣體力） ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Hooker+Valley+Track+carpark" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>晚餐／觀星</strong> — 入住 Mt Cook（唯一一晚）。</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Old Mountaineers Café</strong> — 鄰 DOC Visitor Centre ｜ <a href="https://www.mtcook.com/restaurant" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Mountaineers+Cafe+Mt+Cook" target="_blank">地圖</a></li>
+<li><strong>Hermitage：Alpine Restaurant / Chamois Bar</strong> — 多選擇 ｜ <a href="https://www.hermitage.co.nz/dine/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Hermitage+Hotel+Mount+Cook" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul><li><a href="https://wisebaby.tw/hooker-valley-track/" target="_blank">WiseBaby：Hooker Valley Track 攻略</a></li><li><a href="https://www.doc.govt.nz/hooker-valley-track" target="_blank">DOC：Hooker Valley Track 官方頁</a></li><li><a href="https://www.newzealand.com/us/feature/hooker-valley-track/" target="_blank">100% Pure NZ：Hooker Valley Track 介紹</a></li><li><a href="https://www.lonelyplanet.com/articles/new-zealand-road-trips" target="_blank">Lonely Planet：The 8 best road trips in New Zealand（Southern Alps loop）</a></li></ul></div><div class="lodging"><h3>住宿推薦（Mount Cook / Twizel）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/aoraki-court-motel/hotel/mount-cook-nz.html" rel="noopener" target="_blank">Aoraki Court Motel（Mount Cook，旺季可能超 5,000）</a></li><li><a href="https://www.agoda.com/mountain-chalet-motels/hotel/twizel-nz.html" rel="noopener" target="_blank">Mountain Chalet Motels（Twizel）</a></li><li><a href="https://www.agoda.com/the-lakes-motel-twizel/hotel/twizel-nz.html" rel="noopener" target="_blank">The Lakes Motel（Twizel）</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Tekapo→Mt Cook Village 約 1 小時 15 分；Village→Hooker Valley 車位 5–10 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Lake+Tekapo/Aoraki%2FMount+Cook+Village/Hooker+Valley+Track+Carpark" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 8 — 2/2 (Sat)　Mt Cook → Wānaka（住：Wānaka）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>Tasman Glacier Lake short walk（可選）</strong> — 藍冰與冰湖景色 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Tasman+Glacier+Lake+Viewpoint" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>經 Lindis Pass 前往 Wānaka</strong> — 觀景停靠點小憩 ｜ <a href="https://www.google.com/maps/dir/Aoraki%2FMount+Cook+Village/Lindis+Pass+Lookout/W%C4%81naka" target="_blank">路線</a></li>
+<li><strong>That Wānaka Tree / Lakefront path（湖畔步道）</strong> — 經典拍照點 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=That+Wanaka+Tree" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Town dining &amp; drinks（小鎮餐酒）</strong> — 入住 Wānaka（1 晚）。</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Big Fig（慢燉快食）</strong> — 33 Ardmore St ｜ <a href="https://www.bigfig.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Big+Fig+Wanaka" target="_blank">地圖</a></li>
+<li><strong>Francesca's Italian Kitchen</strong> — 93 Ardmore St ｜ <a href="https://francescawanaka.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Francesca%27s+Italian+Kitchen+W%C4%81naka" target="_blank">地圖</a></li>
+<li><strong>Federal Diner（早午餐）</strong> — 47 Helwick St ｜ <a href="https://www.federaldiner.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Federal+Diner+W%C4%81naka" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul><li><a href="https://www.lonelyplanet.com/articles/new-zealand-road-trips" target="_blank">Lonely Planet：The 8 best road trips in New Zealand（Southern Alps loop）</a></li></ul></div><div class="lodging"><h3>住宿推薦（Wānaka）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/wanaka-hotel/hotel/wanaka-nz.html" rel="noopener" target="_blank">Wanaka Hotel</a></li><li><a href="https://www.agoda.com/fairway-motel-apartments/hotel/wanaka-nz.html" rel="noopener" target="_blank">Fairway Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/archway-motels-chalets/hotel/wanaka-nz.html" rel="noopener" target="_blank">Archway Motel &amp; Chalets</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Mt Cook→Wānaka 約 2.5–3 小時（經 Lindis Pass）　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Aoraki%2FMount+Cook+Village/Lindis+Pass/W%C4%81naka/That+Wanaka+Tree" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 9 — 2/3 (Sun)　Wānaka → Arrowtown → Queenstown（住：Queenstown，第1晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>Cardrona 酒桶屋外拍（路過）</strong> — Crown Range Rd ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Cardrona+Hotel" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Arrowtown Historic Village / Chinese Settlement</strong> — 歷史金礦小鎮、華人村 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Arrowtown+Chinese+Settlement" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>抵達 Queenstown、Lakefront night view（湖畔夜景）</strong> — 入住 Queenstown（第 1 晚）。</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Slow Cuts（Arrowtown）</strong> — 46 Buckingham St ｜ <a href="https://slowcuts.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Slow+Cuts+Arrowtown" target="_blank">地圖</a></li>
+<li><strong>Provisions of Arrowtown</strong> — 65 Buckingham St ｜ <a href="https://www.provisionsofarrowtown.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Provisions+of+Arrowtown" target="_blank">地圖</a></li>
+<li><strong>Fergburger（皇后鎮）</strong> — 42 Shotover St ｜ <a href="https://fergburger.com/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Fergburger+Queenstown" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul><li><a href="https://www.lonelyplanet.com/articles/new-zealand-road-trips" target="_blank">Lonely Planet：The 8 best road trips in New Zealand（Southern Alps loop）</a></li></ul></div><div class="lodging"><h3>住宿推薦（Queenstown）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/mi-pad-smart-hotel/hotel/queenstown-nz.html" rel="noopener" target="_blank">mi-pad Queenstown</a></li><li><a href="https://www.agoda.com/caples-court/hotel/queenstown-nz.html" rel="noopener" target="_blank">Caples Court Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/ramada-suites-by-wyndham-queenstown-remarkables-park/hotel/queenstown-nz.html" rel="noopener" target="_blank">Ramada Suites by Wyndham Remarkables Park</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Wānaka→Cardrona 約 25 分；Cardrona→Arrowtown 約 40 分；Arrowtown→Queenstown 約 25 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/W%C4%81naka/Cardrona+Hotel/Arrowtown/Queenstown" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 10 — 2/4 (Mon)　Queenstown 城景日（住：Queenstown，第2晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>Skyline Queenstown Gondola</strong> — 觀景平台 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Skyline+Queenstown+Gondola" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Luge / Ziptrek / Skyline 活動</strong> — 依喜好加購 ｜ <a href="https://www.skyline.co.nz/en/queenstown/attractions/luge/" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>湖畔日落／鎮上餐酒</strong> — 夜拍瓦卡蒂普湖</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Bespoke Kitchen（早午餐）</strong> — 9 Isle St ｜ <a href="https://www.bespokekitchen.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Bespoke+Kitchen+Queenstown" target="_blank">地圖</a></li>
+<li><strong>Flame Bar &amp; Grill（晚餐）</strong> — Level 1/61 Beach St ｜ <a href="https://www.flamegrill.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Flame+Bar+%26+Grill+Queenstown" target="_blank">地圖</a></li>
+<li><strong>Fergburger / Fergbaker</strong> — 42 / 40 Shotover St ｜ <a href="https://fergburger.com/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Fergbaker+Queenstown" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="lodging"><h3>住宿推薦（Queenstown）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/mi-pad-smart-hotel/hotel/queenstown-nz.html" rel="noopener" target="_blank">mi-pad Queenstown</a></li><li><a href="https://www.agoda.com/caples-court/hotel/queenstown-nz.html" rel="noopener" target="_blank">Caples Court Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/ramada-suites-by-wyndham-queenstown-remarkables-park/hotel/queenstown-nz.html" rel="noopener" target="_blank">Ramada Suites by Wyndham Remarkables Park</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Queenstown 市區移動 5–15 分/段　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Queenstown/Skyline+Queenstown/Queenstown" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 11 — 2/5 (Tue)　Queenstown → Te Anau → Milford Sound → Te Anau（住：Te Anau）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>出發往 Te Anau</strong> — Queenstown → Te Anau 約 2 小時 ｜ <a href="https://www.google.com/maps/dir/Queenstown/Te+Anau" target="_blank">路線</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Milford Sound Cruise</strong> — 1:45–2 小時船班；途中多隧道與觀景點。 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Milford+Sound+Cruise+Terminal" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>入住 Te Anau（1 晚）</strong> — 晚餐後漫步湖畔</li>
+<li><strong>Te Anau 住宿建議（評分通常 ≥8）</strong> — 可訂連結：</li>
+<li><strong>．Fiordland Lakeview Motel &amp; Apartments</strong> — <a href="https://www.booking.com/hotel/nz/fiordland-lakeview-motel-and-apartments.en-gb.html" target="_blank">可訂連結</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Fiordland+Lakeview+Motel+and+Apartments+Te+Anau" target="_blank">地圖</a></li>
+<li><strong>．Radfords on the Lake</strong> — <a href="https://www.booking.com/hotel/nz/radfords-on-the-lake.en-gb.html" target="_blank">可訂連結</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Radfords+on+the+Lake+Te+Anau" target="_blank">地圖</a></li>
+<li><strong>．Distinction Luxmore Hotel</strong> — <a href="https://www.booking.com/hotel/nz/distinction-luxmore.en-gb.html" target="_blank">可訂連結</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Distinction+Luxmore+Hotel+Te+Anau" target="_blank">地圖</a></li>
+<li><strong>．Bella Vista Motel Te Anau</strong> — <a href="https://www.bellavista.co.nz/our-motels/te-anau" target="_blank">官網</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Bella+Vista+Motel+Te+Anau" target="_blank">地圖</a></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>The Fat Duck Gastropub</strong> — 124 Town Centre, Te Anau ｜ <a href="https://www.thefatduck.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Fat+Duck+Te+Anau" target="_blank">地圖</a></li>
+<li><strong>Redcliff Cafe &amp; Restaurant</strong> — 12 Mokonui St ｜ <a href="https://theredcliff.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Redcliff+Restaurant+Te+Anau" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="sec"><h3>參考 / 官方資訊</h3><ul><li><a href="https://www.lonelyplanet.com/articles/dream-trips-australia-new-zealand-pacific" target="_blank">Lonely Planet：Dream trip—Queenstown to Te Anau to Milford Sound（Milford Rd 120km）</a></li></ul></div><div class="lodging"><h3>住宿推薦（Te Anau）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/parklands-motel/hotel/te-anau-nz.html" rel="noopener" target="_blank">Parklands Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/asure-amber-court-motel_2/hotel/te-anau-nz.html" rel="noopener" target="_blank">Amber Court Motel</a></li><li><a href="https://www.agoda.com/distinction-luxmore-hotel/hotel/te-anau-nz.html" rel="noopener" target="_blank">Distinction Luxmore Hotel</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Queenstown→Te Anau 約 2 小時；Te Anau→Milford Sound 約 2 小時（單程）　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Queenstown/Te+Anau/Milford+Sound/Te+Anau" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 12 — 2/6 (Wed)　Te Anau → Queenstown → Glenorchy / Paradise（住：Queenstown，第3晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>回 Queenstown，續行 Glenorchy</strong> — Te Anau → Queenstown → Glenorchy ｜ <a href="https://www.google.com/maps/dir/Te+Anau/Queenstown/Glenorchy" target="_blank">路線</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Glenorchy Wharf（木棧橋）／Paradise 路景</strong> — 短步道＋公路景觀 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Glenorchy+Wharf" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>回 Queenstown 晚餐</strong> — 住宿 Queenstown（第 3 晚）。</li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>The Trading Post（Glenorchy 咖啡）</strong> — Mull St, Glenorchy ｜ <a href="https://www.thetradingpost.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Trading+Post+Glenorchy" target="_blank">地圖</a></li>
+<li><strong>Glenorchy Hotel（酒吧餐）</strong> — Mull St, Glenorchy ｜ <a href="https://www.glenorchynz.com/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Glenorchy+Hotel+Restaurant" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="lodging"><h3>住宿推薦（Queenstown）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/mi-pad-smart-hotel/hotel/queenstown-nz.html" rel="noopener" target="_blank">mi-pad Queenstown</a></li><li><a href="https://www.agoda.com/caples-court/hotel/queenstown-nz.html" rel="noopener" target="_blank">Caples Court Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/ramada-suites-by-wyndham-queenstown-remarkables-park/hotel/queenstown-nz.html" rel="noopener" target="_blank">Ramada Suites by Wyndham Remarkables Park</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Te Anau→Queenstown 約 2 小時；Queenstown→Glenorchy 約 50 分（單程）　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Te+Anau/Queenstown/Glenorchy/Queenstown" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 13 — 2/7 (Thu)　Queenstown 玩樂＋酒莊＋溫泉（住：Queenstown，第4晚）</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>AJ Hackett Kawarau Bungy/Zipride（可選）</strong> — 觀景或體驗彈跳 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=AJ+Hackett+Kawarau+Bungy+Centre" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>Gibbston Wine Trail（酒莊巡禮）</strong> — Amisfield / Akarua / Kinross 擇二 ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Gibbston+Valley+Wineries" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec">
+<h3>晚上</h3><ul>
+<li><strong>Onsen Hot Pools 私湯</strong> — 黃昏～夜間時段佳（需預約） ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Onsen+Hot+Pools+Queenstown" target="_blank">官網/資訊</a></li>
+</ul></div>
+<div class="sec"><h3>附近美食（Google 通常 4★+）</h3><ul>
+<li><strong>Amisfield Restaurant &amp; Cellar Door</strong> — 10 Lake Hayes ｜ <a href="https://amisfield.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Amisfield+Restaurant+Lake+Hayes" target="_blank">地圖</a></li>
+<li><strong>Akarua Wines &amp; Kitchen by Artisan</strong> — 265 Arrowtown-Lake Hayes Rd ｜ <a href="https://akaruaandartisan.co.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Akarua+Wines+%26+Kitchen+by+Artisan" target="_blank">地圖</a></li>
+<li><strong>Kinross Bistro</strong> — 2300 Gibbston Highway ｜ <a href="https://kinross.nz/" target="_blank">網站</a> ｜ <a href="https://www.google.com/maps/search/?api=1&amp;query=Kinross+Bistro" target="_blank">地圖</a></li>
+</ul><div class="small">* 實際評分/營業時間會變動，請以 Google 地圖頁面為準。</div></div>
+<div class="lodging"><h3>住宿推薦（Queenstown）｜Agoda 評分 ≥ 8｜多數 NT$3,000～5,000/晚</h3><ul><li><a href="https://www.agoda.com/mi-pad-smart-hotel/hotel/queenstown-nz.html" rel="noopener" target="_blank">mi-pad Queenstown</a></li><li><a href="https://www.agoda.com/caples-court/hotel/queenstown-nz.html" rel="noopener" target="_blank">Caples Court Motel &amp; Apartments</a></li><li><a href="https://www.agoda.com/ramada-suites-by-wyndham-queenstown-remarkables-park/hotel/queenstown-nz.html" rel="noopener" target="_blank">Ramada Suites by Wyndham Remarkables Park</a></li></ul><div class="note">＊實際評分與價格會隨日期變動，請以 Agoda 當頁為準。若市中心預算超標，優先選鄰近區域（如 Queenstown 的 Frankton、Mount Cook 改住 Twizel）。</div></div><div class="route">車程參考：Queenstown→Kawarau 約 25 分；Kawarau→Gibbston 約 10 分；Gibbston→Onsen 約 20 分；Onsen→市區 10–15 分　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Queenstown/AJ+Hackett+Kawarau+Bungy+Centre/Gibbston+Valley/Onsen+Hot+Pools/Queenstown" target="_blank">查看路線</a></div>
+</div>
+<div class="day">
+<div class="head">Day 14 — 2/8（Sat）　Queenstown → Auckland（轉機）→ Taipei</div>
+<div class="sec">
+<h3>上午</h3><ul>
+<li><strong>NZ638 ZQN→AKL 07:00–08:50</strong> — 轉機 1h55，行李直掛</li>
+</ul></div>
+<div class="sec">
+<h3>下午</h3><ul>
+<li><strong>NZ077 AKL→TPE 10:45–17:00</strong> — 抵達桃園 T2</li>
+</ul></div>
+<div class="route">車程參考：ZQN→AKL→TPE（航班日）　｜ Google 地圖動線： <a href="https://www.google.com/maps/dir/Queenstown+Airport/Auckland+Airport+International/Taipei+Taoyuan+Airport" target="_blank">查看路線</a></div>
+</div>
+</body></html>

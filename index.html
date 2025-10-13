@@ -53,11 +53,51 @@ a:hover{color:#67e8f9;text-decoration:underline}
 .food-item .address{color:#94a3b8;font-size:13px;margin:4px 0}
 .food-item .links{margin-top:8px}
 .food-item .links a{font-size:13px;margin-right:12px}
+/* 返回頂部按鈕樣式 */
+.back-to-top{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:50px;
+  height:50px;
+  background:linear-gradient(135deg,#3b82f6,#1e40af);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
+  box-shadow:0 4px 15px rgba(59,130,246,0.4);
+  transition:all 0.3s ease;
+  z-index:1000;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px)
+}
+.back-to-top.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0)
+}
+.back-to-top:hover{
+  background:linear-gradient(135deg,#1e40af,#1e3a8a);
+  transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(59,130,246,0.6)
+}
+.back-to-top:active{
+  transform:translateY(0)
+}
 @media (max-width:768px){
   h1{font-size:24px}
   .head{font-size:16px;padding:14px 16px}
   .sec{padding:14px 16px}
   .food-grid{grid-template-columns:1fr}
+  .back-to-top{
+    bottom:20px;
+    right:20px;
+    width:45px;
+    height:45px;
+    font-size:18px
+  }
 }
 </style>
 </head>
@@ -65,13 +105,66 @@ a:hover{color:#67e8f9;text-decoration:underline}
 <div class="container">
 <h1>🇳🇿 紐西蘭 北+南島行程（完整版）</h1>
 
+<!-- 目錄導航 -->
+<div style="background:#1e293b;border:2px solid #3b82f6;border-radius:16px;padding:20px;margin:20px 0;">
+<h2 style="color:#60a5fa;margin:0 0 16px 0;font-size:20px">📋 行程目錄 - 快速導航</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
+
+<div style="background:#0f172a;padding:12px;border-radius:8px;border:1px solid #334155">
+<strong style="color:#10b981;font-size:16px;display:block;margin-bottom:8px">🛫 出發 & 北島段</strong>
+<div style="font-size:14px;line-height:1.6">
+<a href="#day-2026-01-25" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 0 (1/25) - 台北出發</a>
+<a href="#day-2026-01-26" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 1 (1/26) - 抵達+黑水漂流</a>
+<a href="#day-2026-01-27" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 2 (1/27) - Waitomo→Rotorua</a>
+<a href="#day-2026-01-28" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 3 (1/28) - Rotorua→Turangi</a>
+<a href="#day-2026-01-29" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 4 (1/29) - 🏔️ Tongariro健行</a>
+<a href="#day-2026-01-30" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 5 (1/30) - Auckland✈️Christchurch</a>
+</div>
+</div>
+
+<div style="background:#0f172a;padding:12px;border-radius:8px;border:1px solid #334155">
+<strong style="color:#3b82f6;font-size:16px;display:block;margin-bottom:8px">🏔️ 南島段</strong>
+<div style="font-size:14px;line-height:1.6">
+<a href="#day-2026-01-31" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 6 (1/31) - Christchurch→Tekapo</a>
+<a href="#day-2026-02-01" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 7 (2/1) - 🚁 Mt Cook飛行體驗</a>
+<a href="#day-2026-02-02" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 8 (2/2) - Mt Cook→Lake Hawea</a>
+<a href="#day-2026-02-03" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 9 (2/3) - 🌸 Wanaka薰衣草農場</a>
+<a href="#day-2026-02-04" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 10 (2/4) - Glenorchy一日遊+還車</a>
+</div>
+</div>
+
+<div style="background:#0f172a;padding:12px;border-radius:8px;border:1px solid #334155">
+<strong style="color:#f59e0b;font-size:16px;display:block;margin-bottom:8px">👑 皇后鎮段</strong>
+<div style="font-size:14px;line-height:1.6">
+<a href="#day-2026-02-05" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 11 (2/5) - Skyline+市區</a>
+<a href="#day-2026-02-06" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 12 (2/6) - 血拼購物日</a>
+<a href="#day-2026-02-07" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 13 (2/7) - 🚢 米佛峽灣一日遊</a>
+<a href="#day-2026-02-08" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">Day 14 (2/8) - 返回台灣</a>
+</div>
+</div>
+
+<div style="background:#0f172a;padding:12px;border-radius:8px;border:1px solid #334155">
+<strong style="color:#8b5cf6;font-size:16px;display:block;margin-bottom:8px">📌 重要資訊</strong>
+<div style="font-size:14px;line-height:1.6">
+<a href="#important-info" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">⚠️ 待確認事項</a>
+<a href="#budget-info" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">💰 預算參考</a>
+<a href="#navigation-info" style="color:#22d3ee;text-decoration:none;display:block;margin:2px 0">🗓️ 快速導航</a>
+</div>
+</div>
+
+</div>
+<div style="text-align:center;margin-top:12px;font-size:13px;color:#9ca3af">
+💡 點擊任何日期可直接跳轉到該天行程
+</div>
+</div>
+
 <div class="intro">
-<strong>📋 行程總覽：</strong>2026/1/25-2/8，共15天。1/25晚上桃園機場出發，北島包含威托摩黑水漂流、羅托魯瓦地熱、<strong>Te Puia毛利文化體驗</strong>、<strong>Tongariro Alpine Crossing</strong>健行；南島涵蓋基督城、蒂卡波、庫克山、<strong>瓦納卡</strong>、皇后鎮及<strong>米佛峽灣一日遊</strong>。
+<strong>📋 行程總覽：</strong>2026/1/25-2/8，共15天。1/25晚上桃園機場出發，北島包含威托摩黑水漂流、羅托魯瓦地熱溫泉、<strong>Tongariro Alpine Crossing</strong>健行；南島涵蓋基督城、蒂卡波、<strong>庫克山飛行體驗</strong>、<strong>瓦納卡</strong>、皇后鎮及<strong>米佛峽灣一日遊</strong>。
 <br><br>
 <strong>✅ 已確認預訂：</strong>
 <ul style="margin:4px 0 0 20px;padding:0">
-<li><strong>住宿11晚：</strong>Waitomo, Rotorua, Christchurch, Tekapo, Mt Cook, Hawea Hotel, Wanaka, Queenstown Airbnb(2晚), Wyndham Garden機場附近(2晚)</li>
-<li><strong>活動2項：</strong>黑水漂流1/26、米佛峽灣2/7從機場出發</li>
+<li><strong>住宿13晚：</strong>Waitomo, Rotorua, Riverstone Lodge Turangi(2晚), 瑞卡頓大都會行政汽車旅館, Tekapo, Mt Cook, Hawea Hotel, Wanaka, Queenstown Airbnb(2晚), Wyndham Garden機場附近(2晚)</li>
+<li><strong>活動3項：</strong>黑水漂流1/26、Mt Cook飛行體驗2/1、米佛峽灣2/7從機場出發</li>
 <li><strong>機票：</strong>國際線TPE↔AKL、ZQN→AKL→TPE</li>
 </ul>
 <br><br>
@@ -82,18 +175,16 @@ a:hover{color:#67e8f9;text-decoration:underline}
 <strong>⚠️ 待確認：</strong>
 <ul style="margin:8px 0 0 20px;padding:0">
 <li><strong>🚨 最優先：1/29 Tongariro Shuttle 預訂</strong>（旺季常客滿！）</li>
-<li><strong>1/27 Te Puia毛利文化體驗</strong> — KKday預訂（約NT$1,900/人）</li>
 <li><strong>住宿2晚：</strong>
   <ul style="margin-top:4px">
     <li>1/28 National Park Village（Tongariro健行前一晚）</li>
     <li>1/29 Turangi（Tongariro健行當晚，恢復體力）</li>
   </ul>
 </li>
-<li><strong>1/30 Auckland→Christchurch 航班</strong>（建議09:00-18:00）</li>
 <li><strong>租車預訂（兩段）：</strong>
   <ul style="margin-top:4px">
     <li><strong>北島：</strong>1/26 AKL機場取 → 1/30 AKL機場還（4天）</li>
-    <li><strong>南島：</strong>1/30 CHC機場取 → 2/4 Queenstown還（5天）</li>
+    <li><strong>南島：</strong>1/30 18:30 CHC機場取 → 2/4 18:30 Queenstown機場還（5天）✅ 已確認</li>
   </ul>
 </li>
 </ul>
@@ -133,7 +224,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 <h3>🍽️ 桃園機場美食推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300&h=200&fit=crop&crop=center" alt="鼎泰豐" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>鼎泰豐 (T2 3F)</strong>
 <div class="address">📍 第二航廈3樓美食街</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥟 小籠包、牛肉麵、經典台灣味</div>
@@ -142,7 +232,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop&crop=center" alt="微風廣場美食街" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>微風廣場美食街 (T2 3F)</strong>
 <div class="address">📍 第二航廈3樓出境後</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍜 多國料理、台式小吃、輕食咖啡</div>
@@ -151,7 +240,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&h=200&fit=crop&crop=center" alt="星巴克咖啡" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Starbucks Coffee (T2)</strong>
 <div class="address">📍 第二航廈多個據點</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">☕ 咖啡、輕食、候機好選擇</div>
@@ -218,7 +306,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 <h3>🍽️ 餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=300&h=200&fit=crop&crop=center" alt="Huhu Café" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Huhu Café</strong>
 <div class="address">📍 10 Waitomo Village Rd</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍽️ 紐西蘭當地料理、咖啡、甜點</div>
@@ -228,7 +315,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop&crop=center" alt="Waitomo General Store" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Waitomo General Store</strong>
 <div class="address">📍 39 Waitomo Village Rd（輕食雜貨店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥪 三明治、輕食、飲料、零食</div>
@@ -237,7 +323,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&h=200&fit=crop&crop=center" alt="Waitomo Big Bird Cafe" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Big Bird Café</strong>
 <div class="address">📍 Waitomo Caves Road</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍰 紐式早餐、咖啡、手工甜點</div>
@@ -246,7 +331,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="Roseland Restaurant" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Roseland Restaurant</strong>
 <div class="address">📍 1177 Waitomo Valley Rd</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥩 紐西蘭牛排、羊排、當地特色菜</div>
@@ -260,7 +344,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 <h3>🎁 Waitomo 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="螢火蟲紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Waitomo Caves Discovery Centre</strong>
 <div class="address">📍 39 Waitomo Village Rd（官方紀念品店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">✨ 螢火蟲主題商品、明信片、T恤、磁鐵</div>
@@ -269,7 +352,6 @@ a:hover{color:#67e8f9;text-decoration:underline}
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="毛利工藝品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Waitomo General Store</strong>
 <div class="address">📍 39 Waitomo Village Rd（當地商店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏮 毛利手工藝品、當地蜂蜜、羊毛製品</div>
@@ -325,48 +407,30 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <li><strong>抵達Rotorua市區</strong> — 約14:00-15:00（Wai-O-Tapu → Rotorua 30分鐘）</li>
 <li><strong>Check-in 後前往 Skyline</strong></li>
 <li><strong>Skyline Gondola + Luge</strong> — 纜車+溜溜車，建議3-5趟 | <a href="https://rotorua.skyline.co.nz/" target="_blank">官網</a></li>
-<li class="small">💡 若參加晚上Te Puia，下午活動可簡化或改為市區休息</li>
+<li class="small">💡 下午可選擇Skyline活動或市區溫泉放鬆</li>
 </ul>
 </div>
 <div class="sec">
-<h3>🔥 傍晚：Te Puia毛利文化體驗</h3>
-<div class="activity">
-<div class="activity-label">⚠️ 待預訂活動</div>
-<div class="activity-name">蒂普亞地熱導覽與毛利文化體驗</div>
-<div class="activity-time">⏱️ 3小時行程</div>
-<div class="activity-time">🌐 <a href="https://www.kkday.com/zh-tw/product/123256" target="_blank" style="color:#22d3ee">KKday預訂連結</a></div>
-<div class="small" style="color:#fdba74;margin-top:8px">
-📍 體驗內容：<br>
-• Te Aronui a Rua 傳統毛利人歡迎儀式 (Pōhiri)<br>
-• 參觀世界著名的普胡圖間歇泉和蒂華卡雷瓦雷瓦地熱谷<br>
-• 國家雕刻和編織學校傳統工藝展示<br>
-• 毛利文化表演（可能含Haka戰舞）<br>
-💰 費用：約NT$1,900/人<br>
-⏰ 場次時間：通常有15:00或17:00場次（需確認預訂時間）
-</div>
-</div>
+<h3>🌆 傍晚：自由活動</h3>
 <ul>
-<li><strong>建議時間安排</strong>
-  <ul style="margin-top:6px">
-    <li>15:00場：14:30出發，18:00結束後晚餐</li>
-    <li>17:00場：16:30出發，20:00結束（可能含晚餐選項）</li>
-  </ul>
-</li>
-<li><strong>Te Puia位置</strong> — 距市區約10分鐘車程 | <a href="https://www.google.com/maps/search/?api=1&query=Te+Puia+Rotorua" target="_blank">地圖</a></li>
+<li><strong>Polynesian Spa</strong> — 享受地熱溫泉放鬆（推薦） | <a href="https://www.polynesianspa.co.nz/" target="_blank">官網</a></li>
+<li><strong>市區散步</strong> — Government Gardens、Kuirau Park 免費地熱足浴</li>
+<li><strong>Eat Streat 餐廳街</strong> — 享用當地美食</li>
+<li><strong>早點休息</strong> — 為明天行程養精蓄銳</li>
 </ul>
 </div>
 <div class="sec">
 <h3>🌙 晚餐建議</h3>
 <ul>
-<li>若Te Puia場次不含晚餐，可前往 <strong>Eat Streat 餐廳街</strong></li>
-<li>或選擇 <strong>Polynesian Spa</strong>（溫泉放鬆）作為晚間活動</li>
+<li><strong>Eat Streat 餐廳街</strong> — 多家餐廳選擇，熱鬧的用餐區域</li>
+<li><strong>湖畔餐廳</strong> — 享用羅托魯瓦湖景晚餐</li>
+<li><strong>溫泉 + 晚餐</strong> — Polynesian Spa 放鬆後再用餐</li>
 </ul>
 </div>
 <div class="sec">
 <h3>🍽️ 餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop&crop=center" alt="Atticus Finch Restaurant" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Atticus Finch</strong>
 <div class="address">📍 1106 Tutanekai St (Eat Streat)</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍷 現代紐西蘭料理、精釀啤酒、葡萄酒</div>
@@ -376,7 +440,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=300&h=200&fit=crop&crop=center" alt="Capers Cafe" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Capers Cafe + Store</strong>
 <div class="address">📍 1181 Eruera St</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">☕ 精品咖啡、早午餐、手工甜點</div>
@@ -386,7 +449,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=200&fit=crop&crop=center" alt="Terrace Kitchen" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Terrace Kitchen</strong>
 <div class="address">📍 1029 Tutanekai St（時令餐酒）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍽️ 時令菜單、精緻餐酒、當地食材</div>
@@ -396,7 +458,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center" alt="Fat Dog Cafe" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Fat Dog Café & Bar</strong>
 <div class="address">📍 1161 Arawa St</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍕 創意披薩、漢堡、精釀啤酒</div>
@@ -405,7 +466,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=300&h=200&fit=crop&crop=center" alt="Hangi & Seafood" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Mitai Maori Village (Hangi)</strong>
 <div class="address">📍 196 Fairy Springs Rd</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍖 傳統毛利地熱料理、Hangi盛宴</div>
@@ -419,7 +479,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🎁 Rotorua 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="Te Puia禮品店" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Te Puia Gift Shop</strong>
 <div class="address">📍 Te Puia 地熱公園內（毛利文化紀念品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏺 毛利雕刻、編織品、玉石(Pounamu)、毛利音樂CD</div>
@@ -428,7 +487,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Manuka蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Wild Earth</strong>
 <div class="address">📍 1181 Eruera St（天然保健品專賣）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 Manuka蜂蜜、蜂膠、羊胎素、綿羊油</div>
@@ -437,7 +495,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="紐西蘭羊毛製品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Mountain Jade</strong>
 <div class="address">📍 1288 Fenton St（玉石羊毛專賣）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">💎 紐西蘭玉石首飾、美麗諾羊毛衣、UGG靴</div>
@@ -446,7 +503,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop&crop=center" alt="地熱泥面膜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Rotorua Central Mall</strong>
 <div class="address">📍 1184 Amohau St（購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧴 地熱泥面膜、溫泉護膚品、當地特產</div>
@@ -485,36 +541,29 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <div class="day" id="day-2026-01-28">
 <div class="head">
 <span>Day 3 — 1/28 (Wed)</span>
-<span class="date-badge" style="background:#f59e0b">住宿待確認</span>
+<span class="date-badge">Rotorua → Turangi</span>
 </div>
 <div class="warning">
-<div class="warning-title">⚠️ 此日住宿待確認</div>
-建議方案：深度遊Rotorua + 移動至Taupo或National Park Village
+<div class="warning-title">📍 前往Turangi住宿</div>
+從Rotorua前往Turangi，為明天Tongariro健行做準備
 </div>
 <div class="sec">
 <h3>📌 建議行程</h3>
 <ul>
 <li><strong>上午：Rotorua深度遊</strong>
   <ul style="margin-top:8px">
-    <li><strong>Te Puia</strong> — Pōhutu間歇泉、毛利文化村（約2-3小時）| <a href="https://www.tepuia.com/" target="_blank">官網</a></li>
-    <li><strong>或 Kuirau Park</strong> — 免費地熱足浴池（輕鬆選項）</li>
+    <li><strong>Kuirau Park</strong> — 免費地熱足浴池（推薦）</li>
+    <li><strong>或 Government Gardens</strong> — 政府花園散步</li>
+    <li><strong>Eat Streat</strong> — 最後品嚐Rotorua美食</li>
   </ul>
 </li>
-<li><strong>中午：前往Taupo或National Park</strong> 
+<li><strong>中午：前往Turangi</strong> 
   <ul style="margin-top:8px">
-    <li><strong>選項A：前往Taupo</strong> — 車程約1小時 | <a href="https://www.google.com/maps/dir/Rotorua/Taupo" target="_blank">🗺️ 路線</a>
-      <ul style="margin-top:4px">
-        <li>Huka Falls — 壯觀瀑布，5分鐘步道</li>
-        <li>Lake Taupo湖畔散步 — 日落美景</li>
-        <li>或溫泉放鬆 — Wairakei Terraces、AC Baths</li>
-      </ul>
-    </li>
-    <li><strong>選項B：直接前往National Park Village</strong> — 車程約2小時
-      <ul style="margin-top:4px">
-        <li>提前到達，準備明天Tongariro健行</li>
-        <li>早點休息養精蓄銳</li>
-      </ul>
-    </li>
+    <li><strong>Rotorua → Turangi</strong> — 車程約1小時 | <a href="https://www.google.com/maps/dir/Rotorua/Turangi" target="_blank">🗺️ 路線</a></li>
+    <li><strong>途經Lake Taupo</strong> — 可停留拍照</li>
+    <li><strong>14:00抵達Turangi</strong> — Check-in Riverstone Lodge</li>
+    <li><strong>下午輕鬆活動</strong> — 湖畔散步、準備明天健行裝備</li>
+    <li><strong>早點休息</strong> — 為明天Tongariro Alpine Crossing養精蓄銳</li>
   </ul>
 </li>
 </ul>
@@ -523,7 +572,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🍽️ Taupo 餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=300&h=200&fit=crop&crop=center" alt="Dixie Browns Restaurant" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Dixie Browns</strong>
 <div class="address">📍 38 Roberts St（湖畔餐廳）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥩 牛排、海鮮、湖景用餐</div>
@@ -533,7 +581,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop&crop=center" alt="The Bistro Taupo" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>The Bistro</strong>
 <div class="address">📍 17 Tamamutu St（精緻當代紐餐）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍽️ 現代歐式料理、精選酒單</div>
@@ -543,7 +590,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=300&h=200&fit=crop&crop=center" alt="Station Cafe National Park" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Station Café (National Park)</strong>
 <div class="address">📍 Findlay St, National Park Village</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">☕ 咖啡、早餐、健行便當</div>
@@ -557,7 +603,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🎁 Taupo 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Taupo蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Huka Honey Hive</strong>
 <div class="address">📍 Huka Falls Road（蜂蜜農場）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 純正Manuka蜂蜜、蜂蜜冰淇淋、養蜂場參觀</div>
@@ -566,7 +611,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="毛利工藝品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Taupo i-SITE Gift Shop</strong>
 <div class="address">📍 30 Tongariro St（遊客中心禮品店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏮 毛利手工藝品、Lake Taupo紀念品、明信片</div>
@@ -575,7 +619,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="羊毛製品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Kiwi Treasures</strong>
 <div class="address">📍 27 Horomatangi St（紐西蘭特產店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧥 羊毛製品、UGG靴、紐西蘭玉石飾品</div>
@@ -585,6 +628,17 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="small" style="margin-top:8px">💡 Taupo以Lake Taupo和Huka Falls聞名，Huka Honey Hive是必訪的蜂蜜農場！</div>
+</div>
+<div class="lodging">
+<div class="confirmed">
+<div class="confirmed-label">✅ 已確認住宿</div>
+<div class="confirmed-name">Riverstone Lodge</div>
+<div class="confirmed-details">
+<div>📍 222 Te Rangitautahanga Road, 圖朗伊, 圖朗伊, 紐西蘭, 3334</div>
+<div>📅 1/28-1/30 (2晚)</div>
+<div>💡 Tongariro健行絕佳位置，2晚連住更輕鬆</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -718,7 +772,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🍽️ Turangi 餐廳推薦（健行後慶祝晚餐）</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop&crop=center" alt="Turangi Tavern" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Turangi Tavern</strong>
 <div class="address">📍 183 Taupahi Rd（當地人氣酒吧餐廳）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍺 牛排、漢堡、啤酒，健行後放鬆好去處</div>
@@ -727,7 +780,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&h=200&fit=crop&crop=center" alt="Monsoon Thai Turangi" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Monsoon Thai Restaurant</strong>
 <div class="address">📍 183 Taupahi Rd（泰式料理）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍜 正宗泰式料理、咖哩、炒河粉</div>
@@ -736,7 +788,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center" alt="Valentines Restaurant Turangi" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Valentines Restaurant</strong>
 <div class="address">📍 Turangi Shopping Centre（家庭餐廳）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍽️ 牛排、海鮮、家庭式料理</div>
@@ -745,7 +796,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=300&h=200&fit=crop&crop=center" alt="Turangi Bakehouse" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Turangi Bakehouse</strong>
 <div class="address">📍 Turangi Shopping Centre（烘焙坊）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥧 紐式肉派、咖啡、明日早餐採購</div>
@@ -760,7 +810,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🎁 Turangi 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Turangi蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Turangi Shopping Centre</strong>
 <div class="address">📍 183 Taupahi Rd（購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 當地蜂蜜、紐西蘭特產、健行紀念品</div>
@@ -769,7 +818,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="釣魚用品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Sporting Life Turangi</strong>
 <div class="address">📍 Town Centre（運動用品店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🎣 世界知名鱒魚釣魚聖地紀念品、釣具</div>
@@ -778,7 +826,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="Tongariro紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Turangi i-SITE</strong>
 <div class="address">📍 Ngawaka Place（遊客中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏔️ Tongariro健行紀念品、明信片、當地地圖</div>
@@ -792,6 +839,8 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <div class="sec">
 <h3>📚 參考資源</h3>
 <ul>
+<li><a href="https://timtingtravel.com/queenstown-to-mt-cook/" target="_blank">TimTing：皇后鎮到庫克山Top10景點推薦</a>（本行程重要參考）</li>
+<li><a href="https://www.wanakalavenderfarm.com/" target="_blank">Wanaka Lavender Farm：薰衣草農場官網</a></li>
 <li><a href="https://timtingtravel.com/tongariro-national-park/" target="_blank">TimTing：Tongariro 完整攻略</a>（強烈推薦，中文詳細說明）</li>
 <li><a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/central-north-island/places/tongariro-national-park/things-to-do/tracks/tongariro-alpine-crossing/" target="_blank">DOC：官方步道資訊</a></li>
 <li><a href="https://www.tongarirocrossing.org.nz/" target="_blank">Tongariro Crossing：Shuttle & 規劃資訊</a></li>
@@ -802,13 +851,12 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <div class="route-label">🛌 今晚住宿位置</div>
 <strong>住宿地點：</strong>Turangi<br>
 <strong>距離Tongariro終點：</strong>約45分鐘車程<br>
-<div style="margin-top:12px;padding:12px;background:#422006;border:2px solid #f59e0b;border-radius:8px">
-<strong style="color:#fbbf24">⚠️ 住宿待確認</strong><br>
-<span style="font-size:13px;color:#fde68a">
-建議預訂 Turangi 住宿：<br>
-• <strong>Turangi Bridge Motel</strong><br>
-• <strong>Creel Lodge</strong><br>
-• <strong>Turangi Holiday Park</strong><br>
+<div style="margin-top:12px;padding:12px;background:#065f46;border:2px solid #10b981;border-radius:8px">
+<strong style="color:#10b981">✅ 已確認住宿</strong><br>
+<span style="font-size:13px;color:#d1fae5">
+<strong>Riverstone Lodge</strong><br>
+📍 222 Te Rangitautahanga Road, 圖朗伊, 圖朗伊, 紐西蘭, 3334<br>
+📅 1/28-1/30 (2晚連住)<br>
 💡 位置絕佳！健行後放鬆，明天前往Auckland更順路（車程縮短1小時）
 </span>
 </div>
@@ -827,14 +875,20 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <span>Day 5 — 1/30 (Fri)</span>
 <span class="date-badge">Auckland ✈️ Christchurch</span>
 </div>
-<div class="warning">
-<div class="warning-title">⚠️ 航班待預訂</div>
-建議：上午或中午航班，讓下午有時間在基督城觀光
+<div class="activity">
+<div class="activity-label">✅ 已確認航班</div>
+<div class="activity-name">JQ 243 Auckland → Christchurch</div>
+<div class="activity-time">⏰ 15:20 AKL起飛 → 16:45 CHC抵達</div>
+<div class="small" style="color:#fdba74;margin-top:8px">
+✈️ Jetstar航空<br>
+🕐 飛行時間：1小時25分鐘<br>
+💡 完美配合18:30租車取車時間
+</div>
 </div>
 <div class="sec">
 <h3>🚗 上午：Turangi → Auckland</h3>
 <ul>
-<li><strong>08:00-08:30</strong> — 退房，前往Auckland</li>
+<li><strong>08:00-08:30</strong> — Riverstone Lodge退房，前往Auckland</li>
 <li><strong>絕佳路線選擇：</strong>
   <ul style="margin-top:8px">
     <li><strong>順路路線：</strong>Turangi → <strong>Lake Taupo東岸</strong> → Taupo → Rotorua方向 → SH5 → SH1 → Auckland</li>
@@ -928,10 +982,14 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
     <li>18:30 - 晚餐</li>
   </ul>
 </li>
-<li><strong>下午抵達（簡化版）</strong>
+<li><strong>下午抵達（JQ 243航班）</strong>
   <ul style="margin-top:8px">
-    <li>取車 → Check-in → <strong>Riverside Market</strong> 晚餐 → 市區散步</li>
-    <li>將觀光重點留到隔天（但1/31要前往Tekapo，時間可能不夠）</li>
+    <li>16:45 抵達CHC機場</li>
+    <li>17:00 提取行李、通關</li>
+    <li>17:30 機場取車（Toyota Yaris - 預訂號5343701）</li>
+    <li>18:00 開車前往瑞卡頓大都會行政汽車旅館 Check-in</li>
+    <li>19:00 <strong>Riverside Market</strong> 晚餐 → 市區散步</li>
+    <li>早點休息，明天前往Tekapo</li>
   </ul>
 </li>
 </ul>
@@ -941,7 +999,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🍽️ 餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&h=200&fit=crop&crop=center" alt="Riverside Market" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Riverside Market</strong>
 <div class="address">📍 96 Oxford Tce（多攤位美食廣場）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏪 多國料理、新鮮食材、當地特產</div>
@@ -951,7 +1008,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=300&h=200&fit=crop&crop=center" alt="Twenty Seven Steps" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Twenty Seven Steps</strong>
 <div class="address">📍 16 New Regent St</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">☕ 精品咖啡、手工甜點、早午餐</div>
@@ -961,7 +1017,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=300&h=200&fit=crop&crop=center" alt="Little High Eatery" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Little High Eatery</strong>
 <div class="address">📍 255 St Asaph St（美食廣場）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍜 亞洲料理、創意小食、多元選擇</div>
@@ -976,7 +1031,7 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🎁 Christchurch 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Riverside Market" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Riverside Market</strong>
 <div class="address">📍 96 Oxford Tce（當地特產集散地）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧀 坎特伯雷起司、當地蜂蜜、手工巧克力、葡萄酒</div>
@@ -986,7 +1041,7 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Westfield Riccarton" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Westfield Riccarton</strong>
 <div class="address">📍 129 Riccarton Rd（大型購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ Kathmandu戶外用品、Farmers百貨、各國品牌</div>
@@ -995,7 +1050,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="Canterbury Museum Shop" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Canterbury Museum Shop</strong>
 <div class="address">📍 Rolleston Ave（博物館紀念品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">📚 紐西蘭歷史書籍、原住民工藝品、明信片</div>
@@ -1010,8 +1064,9 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <div class="lodging">
 <div class="confirmed">
 <div class="confirmed-label">✅ 已確認住宿</div>
-<div class="confirmed-name">Annabelle Court Motel（安娜貝爾閣汽車飯店）</div>
+<div class="confirmed-name">瑞卡頓大都會行政汽車旅館 (Metropolitan Executive Motel on Riccarton)</div>
 <div class="confirmed-details">
+<div>📍 175 Riccarton Road, 里卡頓, 基督城, 紐西蘭, 8041</div>
 <div>📞 +64 3 341 1189</div>
 <div>🕐 入住：14:00 (1/30) | 退房：10:00 (1/31)</div>
 <div>📅 1 晚</div>
@@ -1035,7 +1090,7 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 <h3>🎁 Auckland 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Queen Street購物街" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Queen Street Shopping</strong>
 <div class="address">📍 Queen St（奧克蘭主要購物街）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ 各大品牌、紐西蘭特產、國際精品</div>
@@ -1044,7 +1099,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Auckland蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Countdown Supermarket</strong>
 <div class="address">📍 多個據點（大型超市）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 Manuka蜂蜜、Whittaker's巧克力、Cookie Time</div>
@@ -1053,7 +1107,6 @@ Auckland Airport → Waitomo 約 2.5 小時（180km，經SH1+SH39）
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="Auckland Airport DFS" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Auckland Airport DFS</strong>
 <div class="address">📍 AKL I航站 免稅店</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ 免稅購物，最後採購機會</div>
@@ -1126,7 +1179,6 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🍽️ 餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=300&h=200&fit=crop&crop=center" alt="Kohan Restaurant Japanese Food" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Kohan Restaurant</strong>
 <div class="address">📍 SH8（日式料理，湖景）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍣 日式料理、壽司、拉麵、湖景用餐</div>
@@ -1136,7 +1188,6 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&h=200&fit=crop&crop=center" alt="Reflections Restaurant" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>Reflections Restaurant</strong>
 <div class="address">📍 SH8（湖景餐廳）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🥩 紐西蘭牛排、羊排、湖景用餐</div>
@@ -1145,7 +1196,6 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=200&fit=crop&crop=center" alt="The Greedy Cow Burger" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
 <strong>The Greedy Cow</strong>
 <div class="address">📍 Lake Tekapo Village（漢堡簡餐）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍔 手工漢堡、薯條、奶昔、休閒用餐</div>
@@ -1159,7 +1209,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🎁 Lake Tekapo 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Tekapo紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Tekapo Four Square</strong>
 <div class="address">📍 SH8 Main Road（超市商店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏪 當地特產、明信片、Tekapo紀念品、零食</div>
@@ -1168,7 +1218,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="觀星紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Mt John Observatory</strong>
 <div class="address">📍 University of Canterbury Mt John Observatory</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🔭 天文主題紀念品、星空明信片、觀星手冊</div>
@@ -1177,7 +1227,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="當地蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Alps 2 Ocean Gift Shop</strong>
 <div class="address">📍 Main Road（禮品店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 坎特伯雷蜂蜜、羊毛製品、當地手工藝品</div>
@@ -1225,14 +1275,40 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🏔️ 上午：前往庫克山</h3>
 <ul>
 <li><strong>Lake Tekapo → Mt Cook Village</strong> — 車程約1.5小時 | <a href="https://www.google.com/maps/dir/Lake+Tekapo/Aoraki+Mount+Cook+Village" target="_blank">🗺️ 路線</a></li>
-<li><strong>途經 Lake Pukaki 觀景點</strong> — 牛奶藍湖水，拍照停留</li>
+<li><strong>途經 Lake Pukaki 精選景點</strong> — 牛奶藍湖水，多個拍照勝地
+  <ul style="margin-top:6px">
+    <li>📸 <strong>Punatahu Visitor Center</strong> — Lake Pukaki最佳觀景點，超大落地窗網美照聖地 ★★★必訪</li>
+    <li>🐟 <strong>Mount Cook Alpine Salmon</strong> — 南阿爾卑斯山雪水養殖鮭魚專賣店</li>
+    <li>🏔️ <strong>Peter's Lookout</strong> — 可走下湖邊，靜坐欣賞庫克山倒影 ★★★必訪</li>
+    <li>📷 <strong>Aoraki Mt Cook Scenic Lookout</strong> — 地勢較高，蜿蜒道路與湛藍湖景完美構圖 ★★★必訪</li>
+    <li>💜 <strong>NZ Alpine Lavender Farm</strong> — 南半球最大有機薰衣草農場，薰衣草冰淇淋（11/15-3/31營業）</li>
+  </ul>
+</li>
+<li><a href="https://timtingtravel.com/queenstown-to-mt-cook/" target="_blank">📖 參考：TimTing庫克山行程推薦</a></li>
 </ul>
 </div>
 <div class="sec">
-<h3>🥾 下午：經典步道健行</h3>
+<h3>🚁 上午-下午：飛行體驗 + 步道健行</h3>
+<div class="activity">
+<div class="activity-label">✅ 已確認活動</div>
+<div class="activity-name">Mount Cook 飛行體驗</div>
+<div class="activity-time">⏰ 10:45 – 13:45（3小時）</div>
+<div class="activity-time">🌐 <a href="https://fareharbor.com/embeds/book/inflite-mtcook/items/332199/booking/9a186a33-f642-4711-a5ca-5fb65a80f064/" target="_blank" style="color:#22d3ee">FareHarbor 預訂確認</a></div>
+<div class="small" style="color:#fdba74;margin-top:8px">
+🚁 體驗內容：直升機或小飛機觀賞庫克山冰川<br>
+📸 俯瞰南阿爾卑斯山脈壯麗景色<br>
+💡 3小時完整體驗，包含飛行時間和地面安全簡報
+</div>
+</div>
 <ul>
-<li><strong>Hooker Valley Track</strong> — 來回10km，3小時，三座吊橋，終點冰川湖 | <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/hooker-valley-track/" target="_blank">DOC官網</a></li>
-<li><strong>或 Kea Point Track</strong> — 較短路線，1.5小時來回，冰川景觀</li>
+<li><strong>14:00飛行體驗結束後可選：</strong>
+  <ul style="margin-top:6px">
+    <li><strong>Mt. Cook Rd Lookout</strong> — 接近國家公園的終極觀景台，筆直公路配高聳雪山 ★★★（停留15分鐘）</li>
+    <li><strong>Kea Point Track</strong> — 較短路線，1.5小時來回，冰川景觀（推薦）</li>
+    <li><strong>或 Hooker Valley Track</strong> — 來回10km，3小時，三座吊橋，終點冰川湖（時間充足可選） | <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/canterbury/places/aoraki-mount-cook-national-park/things-to-do/tracks/hooker-valley-track/" target="_blank">DOC官網</a></li>
+    <li><strong>或飯店休息</strong> — 享受山景，為明天長途車程準備</li>
+  </ul>
+</li>
 </ul>
 </div>
 <div class="sec">
@@ -1267,7 +1343,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🎁 Mt Cook 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Hermitage Hotel禮品店" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Hermitage Hotel Gift Shop</strong>
 <div class="address">📍 Mt Cook Village（唯一大型紀念品店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏔️ Mt Cook主題商品、登山用品、明信片</div>
@@ -1276,7 +1352,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="DOC Visitor Centre" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>DOC Aoraki/Mt Cook Visitor Centre</strong>
 <div class="address">📍 1 Larch Grove（遊客中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">📚 國家公園書籍、地圖、環保紀念品</div>
@@ -1285,7 +1361,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="高山用品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Mt Cook Village Store</strong>
 <div class="address">📍 Mt Cook Village（小商店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧥 基本登山用品、保暖衣物、零食</div>
@@ -1335,11 +1411,19 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </ul>
 </div>
 <div class="sec">
-<h3>🚗 下午：經 Lindis Pass 前往 Lake Hawea</h3>
+<h3>🚗 下午：經 Lindis Pass 前往 Lake Hawea（沿途景點豐富）</h3>
 <ul>
-<li><strong>Mt Cook → Lindis Pass → Lake Hawea</strong> — 車程約2.5-3小時 | <a href="https://www.google.com/maps/dir/Mount+Cook+Village/Lindis+Pass+Lookout/Lake+Hawea" target="_blank">🗺️ 路線</a></li>
-<li><strong>Lindis Pass</strong> — 觀景停車點，高山草原風光</li>
-<li><strong>抵達 Lake Hawea</strong> — 約下午3-4點，入住 Hawea Hotel</li>
+<li><strong>Mt Cook → Twizel → Lindis Pass → Lake Hawea</strong> — 車程約2.5-3小時，沿途多個景點 | <a href="https://www.google.com/maps/dir/Mount+Cook+Village/Lindis+Pass+Lookout/Lake+Hawea" target="_blank">🗺️ 路線</a></li>
+<li><strong>推薦沿途停留點：</strong>
+  <ul style="margin-top:8px">
+    <li><strong>Twizel 小鎮</strong> — 魔戒取景地，補給休息（停留20分鐘）</li>
+    <li><strong>High Country Salmon</strong> — 高地鄉村鮭魚農場，品嚐生魚片（停留30分鐘）| <a href="https://www.google.com/maps/search/?api=1&query=High+Country+Salmon+Twizel" target="_blank">地圖</a></li>
+    <li><strong>Omarama 小鎮</strong> — The Wrinkly Rams餐廳，Clay Cliffs石灰峭壁（停留45分鐘）</li>
+    <li><strong>Lindis Pass Viewpoint</strong> — 海拔971公尺觀景台，開闊高山草原（停留20分鐘）★★★必訪</li>
+  </ul>
+</li>
+<li><strong>抵達 Lake Hawea</strong> — 約下午4-5點，入住 Hawea Hotel</li>
+<li><a href="https://timtingtravel.com/queenstown-to-mt-cook/" target="_blank">📖 參考：TimTing 皇后鎮到庫克山Top10景點推薦</a></li>
 </ul>
 </div>
 <div class="sec">
@@ -1351,28 +1435,30 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </ul>
 </div>
 <div class="sec">
-<h3>🍽️ 餐廳推薦</h3>
+<h3>🍽️ 沿途餐廳推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<strong>Bistro Gentil</strong>
-<div class="address">📍 76A Golf Course Rd（法式料理）</div>
+<strong>High Country Salmon（強烈推薦）</strong>
+<div class="address">📍 2602 Twizel-Omarama Road, Twizel（沿途必訪）</div>
+<div style="font-size:12px;color:#9ca3af;margin:4px 0">🍣 紐西蘭最驚豔生魚片！冰川雪水養殖鮭魚，Q彈鮮甜無腥味 ★★★</div>
 <div class="links">
-<a href="https://www.bistrogentil.co.nz/" target="_blank">官網</a>
-<a href="https://www.google.com/maps/search/?api=1&query=Bistro+Gentil+Wanaka" target="_blank">地圖</a>
+<a href="https://www.google.com/maps/search/?api=1&query=High+Country+Salmon+Twizel" target="_blank">地圖</a>
 </div>
 </div>
 <div class="food-item">
-<strong>Francesca's Italian Kitchen</strong>
-<div class="address">📍 123 Ardmore St（義式料理）</div>
+<strong>The Wrinkly Rams</strong>
+<div class="address">📍 24-30 Omarama Avenue, Omarama（沿途休息站）</div>
+<div style="font-size:12px;color:#9ca3af;margin:4px 0">🐑 人氣農場餐廳，可看綿羊羊駝，空間寬闊溫馨</div>
 <div class="links">
-<a href="https://www.google.com/maps/search/?api=1&query=Francescas+Italian+Kitchen+Wanaka" target="_blank">地圖</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Wrinkly+Rams+Omarama" target="_blank">地圖</a>
 </div>
 </div>
 <div class="food-item">
-<strong>Kika</strong>
-<div class="address">📍 2 Dunmore St（紐西蘭現代料理）</div>
+<strong>Punatahu Visitor Center Café</strong>
+<div class="address">📍 5098 Tekapo-Twizel Road, Ben Ohau（Lake Pukaki）</div>
+<div style="font-size:12px;color:#9ca3af;margin:4px 0">☕ 湖景咖啡廳，超大落地窗邊享用輕食</div>
 <div class="links">
-<a href="https://www.google.com/maps/search/?api=1&query=Kika+Wanaka" target="_blank">地圖</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Lake+Pukaki+Visitor+Centre" target="_blank">地圖</a>
 </div>
 </div>
 </div>
@@ -1423,6 +1509,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <ul>
 <li><strong>That Wanaka Tree</strong> — 經典拍照點，早上光線最佳 | <a href="https://www.google.com/maps/search/?api=1&query=That+Wanaka+Tree" target="_blank">地圖</a></li>
 <li><strong>Wanaka Lakefront</strong> — 湖畔步道散步</li>
+<li><strong>Wanaka Lavender Farm</strong> — 薰衣草農場，紫色花海拍照勝地（1-2月盛開）| <a href="https://www.wanakalavenderfarm.com/" target="_blank">官網</a> | <a href="https://www.google.com/maps/search/?api=1&query=Wanaka+Lavender+Farm" target="_blank">地圖</a></li>
 <li><strong>Puzzling World（可選）</strong> — 迷宮與錯覺房間，約1-2小時 | <a href="https://www.puzzlingworld.co.nz/" target="_blank">官網</a></li>
 </ul>
 </div>
@@ -1472,7 +1559,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🎁 Wanaka 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Wanaka購物中心" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Three Parks Shopping Centre</strong>
 <div class="address">📍 Dunmore St（購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ New World超市、藥妝店、戶外用品店</div>
@@ -1481,7 +1568,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Wanaka紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Wanaka i-SITE Gift Shop</strong>
 <div class="address">📍 103 Ardmore St（遊客中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏔️ Wanaka湖區紀念品、明信片、當地手工藝品</div>
@@ -1490,16 +1577,25 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="紐西蘭特產" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Stuart Landsborough's Puzzling World Shop</strong>
 <div class="address">📍 188 Wanaka-Luggate Hwy（獨特紀念品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧩 錯覺主題商品、益智玩具、創意紀念品</div>
 <div class="links">
 <a href="https://www.google.com/maps/search/?api=1&query=Puzzling+World+Wanaka" target="_blank">地圖</a>
 </div>
+<div class="food-item">
+<strong>Wanaka Lavender Farm Shop</strong>
+<div class="address">📍 Wanaka Lavender Farm（薰衣草產品專賣）</div>
+<div style="font-size:12px;color:#9ca3af;margin:4px 0">💜 薰衣草精油、薰衣草蜂蜜、護膚品、乾燥花束</div>
+<div class="links">
+<a href="https://www.wanakalavenderfarm.com/" target="_blank">官網</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Wanaka+Lavender+Farm" target="_blank">地圖</a>
 </div>
 </div>
-<div class="small" style="margin-top:8px">💡 Wanaka湖區很美，That Wanaka Tree是必拍景點，相關紀念品很有紀念價值！</div>
+</div>
+</div>
+<div class="small" style="margin-top:8px">💡 Wanaka湖區很美，That Wanaka Tree是必拍景點，1-2月薰衣草盛開時的Lavender Farm也是絕佳拍照地點！</div>
 </div>
 <div class="lodging">
 <div class="confirmed">
@@ -1584,19 +1680,21 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <ul>
 <li><strong>15:00 從Glenorchy出發返回</strong></li>
 <li><strong>15:45 抵達Queenstown</strong></li>
-<li><strong>16:00-17:00 還車</strong>
+<li><strong>18:30 還車至Queenstown機場</strong>
   <ul style="margin-top:6px">
-    <li><strong>還車地點選擇：</strong>
+    <li><strong>還車詳情：</strong>
       <ul style="margin-top:4px">
-        <li><strong>推薦：Queenstown市區門市</strong>（較方便，還完可直接步行回飯店）</li>
-        <li>或：Queenstown Airport（需搭接駁車回市區）</li>
+        <li>預訂號：5343701</li>
+        <li>車型：2023 Toyota Yaris</li>
+        <li>還車地點：Queenstown Airport</li>
+        <li>時間：18:30</li>
       </ul>
     </li>
     <li>⚠️ 還車前務必加滿油，檢查車況</li>
-    <li>💡 <strong>重要：</strong>確認租車時已選「Queenstown市區還車」或支付異地還車費</li>
+    <li>💡 還車後搭接駁車或Uber回市區Airbnb（約15分鐘）</li>
   </ul>
 </li>
-<li><strong>17:00後</strong> — 步行或Uber前往Queenstown Airbnb入住</li>
+<li><strong>19:00後</strong> — 搭接駁車或Uber前往Queenstown Airbnb入住</li>
 </ul>
 </div>
 <div class="sec">
@@ -1919,7 +2017,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🎁 Queenstown 伴手禮推薦</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Manuka蜂蜜專賣店" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Honey Hive</strong>
 <div class="address">📍 32 Ballarat St（蜂蜜專賣店）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 各等級Manuka蜂蜜、蜂膠、蜂王漿</div>
@@ -1928,7 +2026,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="紐西蘭羊毛製品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Untouched World</strong>
 <div class="address">📍 7 The Mall（高品質羊毛製品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧥 美麗諾羊毛衫、羊駝毛圍巾、環保材質服飾</div>
@@ -1937,7 +2035,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Cookie Time" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Cookie Time</strong>
 <div class="address">📍 41 Shotover St（紐西蘭國民餅乾）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍪 經典巧克力餅乾、各種口味禮盒裝</div>
@@ -1946,7 +2044,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=300&h=200&fit=crop&crop=center" alt="Whittakers巧克力" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Four Square Supermarket</strong>
 <div class="address">📍 39 Shotover St（超市採購）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍫 Whittaker's巧克力、L&P汽水、Tim Tam餅乾</div>
@@ -1955,7 +2053,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="紐西蘭玉石" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Jade Factory</strong>
 <div class="address">📍 54 The Mall（玉石工藝品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">💎 紐西蘭綠玉(Pounamu)首飾、雕刻藝品</div>
@@ -1964,7 +2062,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="戶外用品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Kathmandu</strong>
 <div class="address">📍 88 Beach St（戶外用品）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🎒 登山背包、防水外套、戶外裝備</div>
@@ -1979,7 +2077,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 <h3>🏬 下午：百貨公司血拼時間</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Westfield Riccarton" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Westfield Riccarton</strong>
 <div class="address">📍 129 Riccarton Rd（大型購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ Farmers百貨、Kathmandu戶外用品、各國品牌</div>
@@ -1988,7 +2086,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Remarkables Park購物中心" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Remarkables Park（推薦）</strong>
 <div class="address">📍 Remarkables Park Ave（機場附近）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ New World超市、H&M、Cotton On、紐西蘭名產專櫃</div>
@@ -1997,7 +2095,7 @@ Turangi → Taupo東岸 → Taupo → SH5 → SH1 → Auckland Airport<br>
 </div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Central Otago購物中心" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Central Otago Mall</strong>
 <div class="address">📍 Frankton Road（市區大型購物中心）</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🛍️ 免稅店、紐西蘭特產、國際品牌</div>
@@ -2510,37 +2608,37 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 <h3>🎁 Auckland機場免稅店推薦（最後採購機會）</h3>
 <div class="food-grid">
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop&crop=center" alt="Manuka蜂蜜" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Duty Free - Manuka蜂蜜</strong>
 <div class="address">📍 Auckland I航站 免稅店</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍯 各品牌Manuka蜂蜜、Comvita、Watson & Son</div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=300&h=200&fit=crop&crop=center" alt="Whittakers巧克力" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Whittaker's巧克力專櫃</strong>
 <div class="address">📍 Auckland I航站 免稅店</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍫 紐西蘭國民巧克力、限定包裝、禮盒裝</div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1594736797933-d0f71d0ed32a?w=300&h=200&fit=crop&crop=center" alt="All Blacks紀念品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>All Blacks Shop</strong>
 <div class="address">📍 Auckland I航站 運動用品區</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🏉 全黑隊紀念品、橄欖球周邊、運動服飾</div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=200&fit=crop&crop=center" alt="紐西蘭羊毛製品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Canterbury of New Zealand</strong>
 <div class="address">📍 Auckland I航站 服飾區</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧥 美麗諾羊毛製品、UGG靴、羊毛被</div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=300&h=200&fit=crop&crop=center" alt="紐西蘭酒類" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>New Zealand Wine Centre</strong>
 <div class="address">📍 Auckland I航站 酒類專區</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🍷 Cloudy Bay白酒、Mission Estate紅酒、威士忌</div>
 </div>
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="紐西蘭護膚品" style="width:100%;height:150px;object-fit:cover;border-radius:6px;margin-bottom:8px">
+
 <strong>Living Nature</strong>
 <div class="address">📍 Auckland I航站 化妝品區</div>
 <div style="font-size:12px;color:#9ca3af;margin:4px 0">🧴 天然護膚品、麥盧卡蜂蜜面膜、綿羊油</div>
@@ -2552,7 +2650,7 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 </div>
 
 <!-- 實用資訊 -->
-<div class="day">
+<div class="day" id="important-info">
 <div class="head">
 <span>📌 重要提醒 & 實用資訊</span>
 </div>
@@ -2561,26 +2659,19 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 <ul>
 <li>✅ <strong>已確認預訂：</strong>
   <ul style="margin-top:8px">
-    <li><strong>住宿11晚：</strong>Waitomo, Rotorua, Christchurch, Tekapo, Mt Cook, Hawea Hotel（1晚）, Wanaka（1晚）, Queenstown Airbnb（2晚）, Wyndham Garden機場附近（2晚）</li>
-    <li><strong>活動2項：</strong>黑水漂流1/26、米佛峽灣2/7從機場出發</li>
+    <li><strong>住宿13晚：</strong>Waitomo, Rotorua, Riverstone Lodge Turangi(2晚), 瑞卡頓大都會行政汽車旅館, Tekapo, Mt Cook, Hawea Hotel（1晚）, Wanaka（1晚）, Queenstown Airbnb（2晚）, Wyndham Garden機場附近（2晚）</li>
+    <li><strong>活動3項：</strong>黑水漂流1/26、Mt Cook飛行體驗2/1、米佛峽灣2/7從機場出發</li>
     <li><strong>機票：</strong>國際線TPE↔AKL、ZQN→AKL→TPE</li>
     <li><strong>行程規劃：</strong>Tongariro Alpine Crossing（1/29）</li>
   </ul>
 </li>
-<li>❌ <strong>待預訂（重要！）：</strong>
+<li>✅ <strong>已確認住宿：</strong>
   <ul style="margin-top:8px">
-    <li><strong>1/27 Te Puia毛利文化體驗</strong> — KKday預訂
+    <li><strong>1/28-1/30 Turangi (2晚)：</strong>
       <ul style="margin-top:4px">
-        <li><a href="https://www.kkday.com/zh-tw/product/123256" target="_blank">KKday預訂連結</a></li>
-        <li>費用：約NT$1,900/人</li>
-        <li>💡 需確認場次時間（15:00或17:00）</li>
-      </ul>
-    </li>
-    <li><strong>待訂住宿2晚：</strong>
-      <ul style="margin-top:4px">
-        <li><strong>1/28 National Park Village</strong> — The Park Hotel Ruapehu / Plateau Lodge</li>
-        <li><strong>1/29 Turangi</strong> — Turangi Bridge Motel / Creel Lodge / Turangi Holiday Park</li>
-        <li>💡 旺季房源緊張，需提前預訂！</li>
+        <li><strong>Riverstone Lodge</strong></li>
+        <li>📍 222 Te Rangitautahanga Road, 圖朗伊, 圖朗伊, 紐西蘭, 3334</li>
+        <li>📅 2026年1月28日 星期三 - 2026年1月30日 星期五</li>
       </ul>
     </li>
     <li><strong>1/29 (Thu) Tongariro Shuttle</strong> — 接駁預訂
@@ -2591,19 +2682,16 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
         <li><a href="https://www.tongarirocrossing.org.nz/shuttles" target="_blank">官方Shuttle清單</a></li>
       </ul>
     </li>
-    <li><strong>1/30 (Fri) AKL→CHC 航班</strong> — 彈性時段選擇
-      <ul style="margin-top:4px">
-        <li>推薦時段：<strong>18:00前起飛</strong>（09:00-18:00 任選）</li>
-        <li>上午班機：基督城有完整觀光時間</li>
-        <li>下午班機：北島行程更充裕，不趕時間</li>
-      </ul>
-    </li>
     <li><strong>租車預訂（兩段）</strong>
       <ul style="margin-top:4px">
         <li><strong>北島：</strong>1/26 AKL機場取 → 1/30 AKL機場還（4天）⚠️ 待預訂</li>
-        <li><strong>南島：</strong>1/30 CHC機場取 → 2/4 Queenstown還（5天）⚠️ 待預訂</li>
-        <li>💡 含異地還車費、建議SUV + 全險 + 碎石路險</li>
-        <li>💡 確認還車地點：Queenstown市區或機場</li>
+        <li><strong>南島：</strong>1/30 18:30 CHC機場取 → 2/4 18:30 Queenstown機場還（5天）✅ 已確認
+          <ul style="margin-top:4px">
+            <li>車型：2023 Toyota Yaris (1500cc)</li>
+            <li>預訂號：5343701</li>
+            <li>顧客：Wei Ta Chen</li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -2627,7 +2715,7 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
     <li><strong>南島段（5天）：</strong>
       <ul style="margin-top:4px">
         <li>取車：1/30 Christchurch機場</li>
-        <li>還車：<strong>2/4下午 Queenstown市區或機場</strong></li>
+        <li>還車：<strong>2/4 18:30 Queenstown機場</strong>（已確認）</li>
         <li>路線：CHC → Tekapo → Mt Cook → Lake Hawea → Wanaka → Glenorchy → Queenstown還車</li>
         <li>車款：建議SUV或性能較好車款（山路多）</li>
         <li>費用：約NZD $400-650（NT$7,400-12,000）</li>
@@ -2670,7 +2758,7 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 </ul>
 </div>
 <div class="sec">
-<h3>💰 預算參考（雙人，TWD）</h3>
+<h3 id="budget-info">💰 預算參考（雙人，TWD）</h3>
 
 <!-- 住宿費用表格 -->
 <div style="background:#1e293b;padding:16px;border-radius:12px;margin:16px 0">
@@ -2696,7 +2784,7 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 </tr>
 <tr style="border-bottom:1px solid #334155">
 <td style="padding:8px">1/30</td>
-<td style="padding:8px">Annabelle Court Motel (CHC)</td>
+<td style="padding:8px">瑞卡頓大都會行政汽車旅館 (CHC)</td>
 <td style="padding:8px;text-align:right">NT$2,473</td>
 </tr>
 <tr style="border-bottom:1px solid #334155;background:#0f172a">
@@ -2833,7 +2921,7 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 </div>
 
 <!-- 快速導航 -->
-<div class="day">
+<div class="day" id="navigation-info">
 <div class="head">
 <span>🗓️ 行程快速導航</span>
 </div>
@@ -2868,6 +2956,12 @@ ZQN → AKL → TPE（總飛行時間約13小時，含轉機）<br>
 </div>
 
 </div>
+
+<!-- 返回頂部按鈕 -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="返回頂部">
+  ↑
+</button>
+
 <script>
 // 自動滾動到當日行程
 function scrollToToday() {
@@ -2916,8 +3010,34 @@ function scrollToToday() {
     }
 }
 
+// 返回頂部功能
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 控制返回頂部按鈕顯示/隱藏
+function toggleBackToTopButton() {
+    const backToTopButton = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+}
+
 // 頁面載入完成後執行
-document.addEventListener('DOMContentLoaded', scrollToToday);
+document.addEventListener('DOMContentLoaded', function() {
+    scrollToToday();
+    
+    // 監聽滾動事件
+    window.addEventListener('scroll', toggleBackToTopButton);
+    
+    // 初始檢查
+    toggleBackToTopButton();
+});
 </script>
 
 </body>

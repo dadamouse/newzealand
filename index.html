@@ -3134,10 +3134,11 @@ function scrollToToday() {
 
 // 返回頂部功能
 function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, c - Math.ceil(c / 8));
+    }
 }
 
 // 控制返回頂部按鈕顯示/隱藏
